@@ -64,14 +64,14 @@
     <Folder Include="dbo\Stored Procedures\" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="dbo\Tables\Colors.sql" />
-    <Build Include="dbo\Tables\Packages.sql" />
-    <Build Include="dbo\Tables\Serials.sql" />
-    <Build Include="dbo\Tables\Tickets.sql" />
-    <Build Include="dbo\Tables\Roles.sql" />
-    <Build Include="dbo\Tables\Users.sql" />
-    <Build Include="dbo\Tables\Logins.sql" />
-    <Build Include="dbo\Tables\Summaries.sql" />
-    <Build Include="dbo\Tables\Reports.sql" />
+    <Build Include="dbo\Tables\Color.sql" />
+    <Build Include="dbo\Tables\Package.sql" />
+    <Build Include="dbo\Tables\Serial.sql" />
+    <Build Include="dbo\Tables\Ticket.sql" />
+    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\User.sql" />
+    <Build Include="dbo\Tables\Login.sql" />
+    <Build Include="dbo\Tables\Summary.sql" />
+    <Build Include="dbo\Tables\Report.sql" />
   </ItemGroup>
 </Project>

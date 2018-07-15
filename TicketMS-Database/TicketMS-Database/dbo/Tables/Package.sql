@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Packages] (
+﻿CREATE TABLE [dbo].[Package] (
     [Id]          INT            IDENTITY (1, 1) NOT NULL,
     [RowVersion]  ROWVERSION     NOT NULL,
     [ColorId]     INT            NULL,
@@ -10,18 +10,18 @@
     [IsSpecial]   BIT            DEFAULT ((0)) NOT NULL,
     [FirstNumber] INT            NULL,
     [Name]        NVARCHAR (64)  NULL,
-    CONSTRAINT [PK_dbo.Packages] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_dbo.Packages_dbo.Colors_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Colors] ([Id]),
-    CONSTRAINT [FK_dbo.Packages_dbo.Serials_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serials] ([Id])
+    CONSTRAINT [PK_dbo.Package] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.Package_dbo.Color_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
+    CONSTRAINT [FK_dbo.Package_dbo.Series_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id])
 );
 
 
 GO
 CREATE NONCLUSTERED INDEX [IX_ColorId]
-    ON [dbo].[Packages]([ColorId] ASC);
+    ON [dbo].[Package]([ColorId] ASC);
 
 
 GO
 CREATE NONCLUSTERED INDEX [IX_SerialId]
-    ON [dbo].[Packages]([SerialId] ASC);
+    ON [dbo].[Package]([SerialId] ASC);
 

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[Logins] (
+﻿CREATE TABLE [dbo].[Login] (
     [Id]        INT            IDENTITY (1, 1) NOT NULL,
     [UserId]    INT            NOT NULL,
     [Date]      DATETIME       NOT NULL,
@@ -7,12 +7,12 @@
     [UserAgent] NVARCHAR (MAX) NULL,
     [Type]      NVARCHAR (MAX) NULL,
     [Host]      NVARCHAR (MAX) NULL,
-    CONSTRAINT [PK_dbo.Logins] PRIMARY KEY CLUSTERED ([Id] ASC),
-    CONSTRAINT [FK_dbo.Logins_dbo.Users_UserId] FOREIGN KEY ([UserId]) REFERENCES [dbo].[Users] ([Id]) ON DELETE CASCADE
+    CONSTRAINT [PK_dbo.Login] PRIMARY KEY CLUSTERED ([Id] ASC),
+    CONSTRAINT [FK_dbo.Login_dbo.User_UserId] FOREIGN KEY ([UserId]) REFERENCES [dbo].[User] ([Id]) ON DELETE CASCADE
 );
 
 
 GO
 CREATE NONCLUSTERED INDEX [IX_UserId]
-    ON [dbo].[Logins]([UserId] ASC);
+    ON [dbo].[Login]([UserId] ASC);
 
