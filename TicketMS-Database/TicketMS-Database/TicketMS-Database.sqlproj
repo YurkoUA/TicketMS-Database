@@ -25,6 +25,7 @@
     <TargetDatabaseSet>True</TargetDatabaseSet>
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+    <ValidateCasingOnIdentifiers>True</ValidateCasingOnIdentifiers>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <OutputPath>bin\Release\</OutputPath>
@@ -62,6 +63,7 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
+    <Folder Include="dbo\Views" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Color.sql" />
@@ -73,5 +75,17 @@
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\Summary.sql" />
     <Build Include="dbo\Tables\Report.sql" />
+    <Build Include="dbo\Views\v_SeriesShort.sql" />
+    <Build Include="dbo\Views\v_ColorsShort.sql" />
+    <Build Include="dbo\Views\v_SeriesExtended.sql" />
+    <Build Include="dbo\Views\v_ColorsExtended.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_Series.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_Colors.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_FirstDigit.sql" />
+    <Build Include="dbo\Views\v_Packages.sql" />
+    <Build Include="dbo\Views\v_Tickets.sql" />
+    <Build Include="dbo\Views\v_TicketsUnallocated.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_FindNumber.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_Find.sql" />
   </ItemGroup>
 </Project>
