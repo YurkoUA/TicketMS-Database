@@ -64,6 +64,8 @@
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\Stored Procedures\" />
     <Folder Include="dbo\Views" />
+    <Folder Include="dbo\User Defined Types" />
+    <Folder Include="dbo\Functions" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Color.sql" />
@@ -87,5 +89,11 @@
     <Build Include="dbo\Views\v_TicketsUnallocated.sql" />
     <Build Include="dbo\Stored Procedures\USP_Tickets_FindNumber.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_Find.sql" />
+    <Build Include="dbo\Views\v_Notes.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Notes_Find.sql" />
+    <Build Include="dbo\User Defined Types\IntArrayType.sql" />
+    <Build Include="dbo\Functions\fn_Serial_CanBeDeleted.sql" />
+    <Build Include="dbo\Functions\fn_Color_CanBeDeleted.sql" />
+    <Build Include="dbo\Functions\fn_Package_CanBeDeleted.sql" />
   </ItemGroup>
 </Project>
