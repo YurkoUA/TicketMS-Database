@@ -95,5 +95,8 @@
     <Build Include="dbo\Functions\fn_Serial_CanBeDeleted.sql" />
     <Build Include="dbo\Functions\fn_Color_CanBeDeleted.sql" />
     <Build Include="dbo\Functions\fn_Package_CanBeDeleted.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_Filter.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_Filter.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_GetList.sql" />
   </ItemGroup>
 </Project>
