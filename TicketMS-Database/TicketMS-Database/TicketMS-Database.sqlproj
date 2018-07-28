@@ -98,5 +98,19 @@
     <Build Include="dbo\Stored Procedures\USP_Tickets_Filter.sql" />
     <Build Include="dbo\Stored Procedures\USP_Packages_Filter.sql" />
     <Build Include="dbo\Stored Procedures\USP_Packages_GetList.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_Move.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_GetBySerial.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_GetByColor.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_GetList.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_MoveMany.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_GetByPackage.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_CreateDefault.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_CreateSpecial.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_SetOpened.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_MakeSpecial.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_MakeDefault.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Tickets_GetMany.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_GetForTicket.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_ChangeNumber.sql" />
   </ItemGroup>
 </Project>

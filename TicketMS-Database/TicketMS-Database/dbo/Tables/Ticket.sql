@@ -8,7 +8,7 @@
     [SerialNumber] NVARCHAR (2)   NOT NULL,
     [Note]         NVARCHAR (128) NULL,
     [Date]         NVARCHAR (32)  NULL,
-    [AddDate]      DATETIME       NOT NULL,
+    [CreatedDate]  DATETIME       NOT NULL DEFAULT((GETUTCDATE())),
     CONSTRAINT [PK_dbo.Tickets] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_dbo.Tickets_dbo.Colors_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]) ON DELETE CASCADE,
     CONSTRAINT [FK_dbo.Tickets_dbo.Packages_PackageId] FOREIGN KEY ([PackageId]) REFERENCES [dbo].[Package] ([Id]),

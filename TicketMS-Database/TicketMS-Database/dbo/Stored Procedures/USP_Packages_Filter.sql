@@ -5,7 +5,7 @@
 AS
 	SELECT *
 	FROM [v_Packages] AS [p]
-	WHERE ((@firstDigit IS NOT NULL		AND [p].[FirstNumber] = @firstDigit)		OR @firstDigit IS NULL)
+	WHERE ((@firstDigit IS NOT NULL		AND [p].[FirstDigit] = @firstDigit)			OR @firstDigit IS NULL)
 		AND		((@serialId IS NOT NULL	AND [p].[SerialId] = @serialId)				OR @serialId IS NULL)
 		AND		((@colorId IS NOT NULL	AND [p].[ColorId] = @colorId)				OR @colorId IS NULL)
 
