@@ -6,7 +6,7 @@ AS
 		,COUNT(*)					AS [Count]
 
 	FROM [Ticket] AS [t]
-	WHERE [t].[AddDate] BETWEEN @StartDate AND @EndDate
+	WHERE [t].[CreatedDate] BETWEEN @StartDate AND @EndDate
 
 	GROUP BY LEFT([t].[Number], 1)
 	ORDER BY [Name]

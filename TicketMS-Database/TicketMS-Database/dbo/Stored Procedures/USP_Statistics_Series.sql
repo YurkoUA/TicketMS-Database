@@ -8,7 +8,7 @@ AS
 	FROM [Color] AS [s]
 
 	LEFT JOIN [Ticket] AS [t] ON [t].[ColorId] = [s].[Id]
-	WHERE [t].[AddDate] BETWEEN @StartDate AND @EndDate
+	WHERE [t].[CreatedDate] BETWEEN @StartDate AND @EndDate
 
 	GROUP BY [s].[Name]
 	ORDER BY [Count] DESC

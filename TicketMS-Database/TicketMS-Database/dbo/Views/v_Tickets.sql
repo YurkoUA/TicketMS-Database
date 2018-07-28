@@ -7,16 +7,17 @@ SELECT	[t].[Id]
 		,[t].[CreatedDate]
 		,[t].[Date]
 		,[t].[Note]
-		,LEFT([t].[Number], 1)	AS [FirstDigit]
+		,LEFT([t].[Number], 1)				AS [FirstDigit]
+		,[fn_Number_IsHappy]([t].[Number])	AS [IsHappy]
 
-		,[p].[Id]				AS [PackageId]
-		,[p].[Name]				AS [PackageName]
+		,[p].[Id]							AS [PackageId]
+		,[p].[Name]							AS [PackageName]
 
-		,[s].[Id]				AS [SerialId]
-		,[s].[Name]				AS [SerialName]
+		,[s].[Id]							AS [SerialId]
+		,[s].[Name]							AS [SerialName]
 
-		,[c].[Id]				AS [ColorId]
-		,[c].[Name]				AS [ColorName]
+		,[c].[Id]							AS [ColorId]
+		,[c].[Name]							AS [ColorName]
 
 FROM [Ticket] AS [t]
 

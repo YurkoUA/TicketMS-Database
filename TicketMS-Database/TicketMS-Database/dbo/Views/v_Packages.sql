@@ -41,7 +41,7 @@ GROUP BY [p].[Id]
 		,[p].[FirstDigit]
 		,[p].[Nominal]
 		,[p].[Note]
-		,[p].[Date]
+		,[p].[CreatedDate]
 		,[c].[Id]
 		,[c].[Name]
 
