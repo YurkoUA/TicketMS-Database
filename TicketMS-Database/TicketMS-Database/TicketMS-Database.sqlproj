@@ -112,5 +112,12 @@
     <Build Include="dbo\Stored Procedures\USP_Tickets_GetMany.sql" />
     <Build Include="dbo\Stored Procedures\USP_Packages_GetForTicket.sql" />
     <Build Include="dbo\Stored Procedures\USP_Ticket_ChangeNumber.sql" />
+    <Build Include="dbo\Functions\fn_Number_IsHappy.sql" />
+    <Build Include="dbo\Functions\fn_Number_IsReversible.sql" />
+    <Build Include="dbo\Functions\fn_Number_IsConsistent.sql" />
+    <Build Include="dbo\Views\v_TicketsReversible.sql" />
+    <Build Include="dbo\Views\v_TicketsConsistent.sql" />
+    <Build Include="dbo\Views\v_TicketsHappy.sql" />
+    <Build Include="dbo\Stored Procedures\USP_TicketsHappy_GetList.sql" />
   </ItemGroup>
 </Project>
