@@ -1,0 +1,6 @@
+﻿CREATE TABLE [dbo].[Nominal]
+(
+	[Id]		INT		NOT NULL PRIMARY KEY,
+	[Price]		MONEY	NOT NULL UNIQUE,
+	[IsDefault] BIT		NOT NULL DEFAULT(0)
+)

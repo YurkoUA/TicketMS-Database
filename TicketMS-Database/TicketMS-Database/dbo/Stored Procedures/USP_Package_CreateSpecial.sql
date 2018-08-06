@@ -2,11 +2,11 @@
 	@Name		NVARCHAR (64),
 	@ColorId	INT,
 	@SerialId	INT,
-	@Nominal	REAL,
+	@NominalId	INT,
 	@Note		NVARCHAR(128)
 AS
 	DECLARE @isSpecial BIT = 1
 
-	INSERT INTO [Package]([Name], [ColorId], [SerialId], [Nominal], [Note], [IsSpecial])
-		VALUES (@Name, @ColorId, @SerialId, @Nominal, @Note, @isSpecial)
+	INSERT INTO [Package]([Name], [ColorId], [SerialId], [NominalId], [Note], [IsSpecial])
+		VALUES (@Name, @ColorId, @SerialId, @NominalId, @Note, @isSpecial)
 RETURN 0

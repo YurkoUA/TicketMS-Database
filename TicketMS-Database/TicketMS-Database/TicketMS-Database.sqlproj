@@ -119,5 +119,6 @@
     <Build Include="dbo\Views\v_TicketsConsistent.sql" />
     <Build Include="dbo\Views\v_TicketsHappy.sql" />
     <Build Include="dbo\Stored Procedures\USP_TicketsHappy_GetList.sql" />
+    <Build Include="dbo\Tables\Nominal.sql" />
   </ItemGroup>
 </Project>

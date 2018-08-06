@@ -2,10 +2,10 @@
 	@ColorId	INT,
 	@SerialId	INT,
 	@FirstDigit	INT,
-	@Nominal	REAL,
+	@NominalId	INT,
 	@Note		NVARCHAR(128)
 AS
 	
-	INSERT INTO [Package]([ColorId], [SerialId], [FirstDigit], [Nominal], [Note])
-			VALUES (@ColorId, @SerialId, @FirstDigit, @Nominal, @Note)
+	INSERT INTO [Package]([ColorId], [SerialId], [FirstDigit], [NominalId], [Note])
+			VALUES (@ColorId, @SerialId, @FirstDigit, @NominalId, @Note)
 RETURN 0

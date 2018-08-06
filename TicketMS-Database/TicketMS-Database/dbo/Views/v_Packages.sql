@@ -7,7 +7,6 @@ SELECT	[p].[Id]			AS [Id]
 		,[p].[IsOpened]
 		,[p].[IsSpecial]
 		,[p].[FirstDigit]
-		,[p].[Nominal]
 		,[p].[Note]
 		,[p].[CreatedDate]
 		,COUNT([t].[Id])	AS [TicketsCount]
@@ -20,11 +19,16 @@ SELECT	[p].[Id]			AS [Id]
 		,[c].[Id]			AS [ColorId]
 		,[c].[Name]			AS [ColorName]
 
+		-- Nominal
+		,[n].[Id]			AS [NominalId]
+		,[n].[Price]
+
 FROM [Package] AS [p]
 
 LEFT JOIN [Serial]	AS [s] ON [s].[Id] = [p].[SerialId]
 LEFT JOIN [Color]	AS [c] ON [c].[Id] = [p].[ColorId]
 LEFT JOIN [Ticket]	AS [t] ON [t].[PackageId] = [p].[Id]
+JOIN [Nominal] AS [n] ON [n].[Id] = [p].[NominalId]
 
 CROSS APPLY
 	(
@@ -39,13 +43,16 @@ GROUP BY [p].[Id]
 		,[p].[IsOpened]
 		,[p].[IsSpecial]
 		,[p].[FirstDigit]
-		,[p].[Nominal]
 		,[p].[Note]
 		,[p].[CreatedDate]
+
 		,[c].[Id]
 		,[c].[Name]
 
 		,[s].[Id]
 		,[s].[Name]
+
+		,[n].[Id]
+		,[n].[Price]
 
 		,[FirstTicket].[Number]
