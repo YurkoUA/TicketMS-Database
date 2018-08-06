@@ -1,6 +1,5 @@
 ﻿CREATE TABLE [dbo].[User] (
     [Id]           INT             IDENTITY (1, 1) NOT NULL,
-    [RowVersion]   ROWVERSION      NOT NULL,
     [Email]        NVARCHAR (64)   NOT NULL,
     [UserName]     NVARCHAR (64)   NOT NULL,
     [PasswordHash] VARBINARY (MAX) NOT NULL,

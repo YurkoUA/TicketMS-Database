@@ -1,6 +1,5 @@
 ﻿CREATE TABLE [dbo].[Ticket] (
     [Id]           INT            IDENTITY (1, 1) NOT NULL,
-    [RowVersion]   ROWVERSION     NOT NULL,
     [Number]       NVARCHAR (6)   NOT NULL,
     [PackageId]    INT            NULL,
 	[NominalId]	   INT			  NOT NULL,

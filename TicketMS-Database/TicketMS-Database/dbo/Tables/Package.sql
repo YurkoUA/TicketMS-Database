@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Package] (
     [Id]          INT            IDENTITY (1, 1) NOT NULL,
-    [RowVersion]  ROWVERSION     NOT NULL,
+    [Name]        NVARCHAR (64)  NULL,
     [ColorId]     INT            NULL,
     [SerialId]    INT            NULL,
 	[NominalId]	  INT			 NOT NULL,
@@ -9,7 +9,6 @@
     [Note]        NVARCHAR (128) NULL,
     [IsSpecial]   BIT            DEFAULT ((0)) NOT NULL,
     [FirstDigit]  INT            NULL,
-    [Name]        NVARCHAR (64)  NULL,
     CONSTRAINT [PK_dbo.Package] PRIMARY KEY CLUSTERED ([Id] ASC),
     CONSTRAINT [FK_dbo.Package_dbo.Color_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
     CONSTRAINT [FK_dbo.Package_dbo.Series_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),
