@@ -1,9 +1,10 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Ticket_Move]
-	@TicketId	INT,
-	@PackageId	INT
+	@ticketId	INT,
+	@packageId	INT
 AS
-	UPDATE [Ticket]
-		SET [Ticket].[PackageId] = @PackageId
-		WHERE [Ticket].[Id] = @TicketId
+	UPDATE [Ticket] SET 
+		[PackageId] = @packageId,
+		[LastMovedDate] = GETUTCDATE()
+	WHERE [Id] = @ticketId
 
 RETURN 0
