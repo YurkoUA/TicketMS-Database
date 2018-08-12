@@ -133,5 +133,13 @@
     <Build Include="dbo\Stored Procedures\USP_Report_DefaultPackages.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_TicketsTotal.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_PackagesTotal.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_HappyBySerial.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_HappyByFirstDigit.sql" />
+    <Build Include="dbo\Views\v_TicketsDuplicates.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_GetDuplicatesWith.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_Get.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_GetDuplicatesWithCount.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_FilterCount.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Packages_Get.sql" />
   </ItemGroup>
 </Project>
