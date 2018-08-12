@@ -2,9 +2,9 @@
 	@startDate DATETIME,
 	@endDate DATETIME
 AS
-	SELECT [c].[Name]			AS [Name]
-		,[c].[PaletteName]		AS [PaletteName]
-		,COUNT([t].[ColorId])	AS [Count]
+	SELECT	[c].[Name],
+			[c].[PaletteName],
+			COUNT([t].[ColorId]) AS [Count]
 
 	FROM [Color] AS [c]
 

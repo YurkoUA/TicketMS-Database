@@ -128,5 +128,6 @@
     <Build Include="dbo\Stored Procedures\USP_Package_EditDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_EditSpecial.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_GetByNominal.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_Summary.sql" />
   </ItemGroup>
 </Project>
