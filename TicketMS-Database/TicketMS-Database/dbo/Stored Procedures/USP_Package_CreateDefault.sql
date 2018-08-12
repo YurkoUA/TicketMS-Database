@@ -1,11 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_CreateDefault]
-	@ColorId	INT,
-	@SerialId	INT,
-	@FirstDigit	INT,
-	@NominalId	INT,
-	@Note		NVARCHAR(128)
+	@colorId	INT,
+	@serialId	INT,
+	@firstDigit	INT,
+	@nominalId	INT,
+	@note		NVARCHAR(128)
 AS
-	
+	DECLARE @id INT
+
 	INSERT INTO [Package]([ColorId], [SerialId], [FirstDigit], [NominalId], [Note])
-			VALUES (@ColorId, @SerialId, @FirstDigit, @NominalId, @Note)
-RETURN 0
+			VALUES (@colorId, @serialId, @firstDigit, @nominalId, @note)
+
+	SET @id = SCOPE_IDENTITY()
+RETURN @id

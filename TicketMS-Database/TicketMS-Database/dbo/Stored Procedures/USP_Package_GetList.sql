@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[USP_Packages_GetList]
+﻿CREATE PROCEDURE [dbo].[USP_Package_GetList]
 	@offset INT = 0,
 	@take	INT = 20,
 

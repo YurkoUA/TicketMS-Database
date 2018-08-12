@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[USP_Packages_Filter]
+﻿CREATE PROCEDURE [dbo].[USP_Package_Filter]
 	@firstDigit INT = NULL,
 	@serialId	INT = NULL,
 	@colorId	INT = NULL,

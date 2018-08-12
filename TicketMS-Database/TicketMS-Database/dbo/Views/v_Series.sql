@@ -1,4 +1,4 @@
-﻿CREATE VIEW [dbo].[v_SeriesExtended]
+﻿CREATE VIEW [dbo].[v_Series]
 AS
 
 SELECT	[s].[Id]

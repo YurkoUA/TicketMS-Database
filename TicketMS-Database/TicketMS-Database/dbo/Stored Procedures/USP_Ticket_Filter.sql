@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[USP_Tickets_Filter]
+﻿CREATE PROCEDURE [dbo].[USP_Ticket_Filter]
 	@firstDigit INT = NULL,
 	@serialId	INT = NULL,
 	@colorId	INT = NULL,

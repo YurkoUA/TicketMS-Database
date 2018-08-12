@@ -1,12 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_CreateSpecial]
-	@Name		NVARCHAR (64),
-	@ColorId	INT,
-	@SerialId	INT,
-	@NominalId	INT,
-	@Note		NVARCHAR(128)
+	@name		NVARCHAR (64),
+	@colorId	INT,
+	@serialId	INT,
+	@nominalId	INT,
+	@note		NVARCHAR(128)
 AS
-	DECLARE @isSpecial BIT = 1
+	DECLARE @id INT
 
 	INSERT INTO [Package]([Name], [ColorId], [SerialId], [NominalId], [Note], [IsSpecial])
-		VALUES (@Name, @ColorId, @SerialId, @NominalId, @Note, @isSpecial)
-RETURN 0
+		VALUES (@name, @colorId, @serialId, @nominalId, @note, 1)
+
+	SELECT @id = SCOPE_IDENTITY()
+RETURN @id

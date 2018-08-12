@@ -1,4 +1,4 @@
-﻿CREATE VIEW [dbo].[v_ColorsExtended]
+﻿CREATE VIEW [dbo].[v_Colors]
 AS
 
 SELECT	[c].[Id]	AS [Id]
