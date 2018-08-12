@@ -1,0 +1,4 @@
+﻿CREATE PROCEDURE [dbo].[USP_Ticket_GetRandom]
+AS
+	SELECT TOP 1 * FROM v_Tickets ORDER BY NEWID()
+RETURN 0

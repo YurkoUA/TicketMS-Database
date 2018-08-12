@@ -1,15 +1,16 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Statistics_Colors]
-	@StartDate DATETIME,
-	@EndDate DATETIME
+	@startDate DATETIME,
+	@endDate DATETIME
 AS
-	SELECT [s].[Name]			AS [Name]
+	SELECT [c].[Name]			AS [Name]
+		,[c].[PaletteName]		AS [PaletteName]
 		,COUNT([t].[ColorId])	AS [Count]
 
-	FROM [Color] AS [s]
+	FROM [Color] AS [c]
 
-	LEFT JOIN [Ticket] AS [t] ON [t].[ColorId] = [s].[Id]
-	WHERE [t].[CreatedDate] BETWEEN @StartDate AND @EndDate
+	LEFT JOIN [Ticket] AS [t] ON [t].[ColorId] = [c].[Id]
+	WHERE [t].[CreatedDate] BETWEEN @startDate AND @endDate
 
-	GROUP BY [s].[Name]
+	GROUP BY [c].[Name]
 	ORDER BY [Count] DESC
 RETURN 0

@@ -77,10 +77,8 @@
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\Summary.sql" />
     <Build Include="dbo\Tables\Report.sql" />
-    <Build Include="dbo\Views\v_SeriesShort.sql" />
-    <Build Include="dbo\Views\v_ColorsShort.sql" />
-    <Build Include="dbo\Views\v_SeriesExtended.sql" />
-    <Build Include="dbo\Views\v_ColorsExtended.sql" />
+    <Build Include="dbo\Views\v_Series.sql" />
+    <Build Include="dbo\Views\v_Colors.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_Series.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_Colors.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_FirstDigit.sql" />
@@ -120,5 +118,10 @@
     <Build Include="dbo\Views\v_TicketsHappy.sql" />
     <Build Include="dbo\Stored Procedures\USP_TicketsHappy_GetList.sql" />
     <Build Include="dbo\Tables\Nominal.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_GetRandom.sql" />
+    <Build Include="dbo\Views\v_Nominals.sql" />
+    <Build Include="dbo\Tables\ReportDocument.sql" />
+    <Build Include="dbo\Views\v_Reports.sql" />
+    <Build Include="dbo\Stored Procedures\USP_User_Get.sql" />
   </ItemGroup>
 </Project>
