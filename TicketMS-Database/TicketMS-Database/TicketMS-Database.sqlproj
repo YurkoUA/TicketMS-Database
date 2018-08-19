@@ -141,5 +141,15 @@
     <Build Include="dbo\Functions\fn_Ticket_GetDuplicatesWithCount.sql" />
     <Build Include="dbo\Functions\fn_Ticket_FilterCount.sql" />
     <Build Include="dbo\Stored Procedures\USP_Packages_Get.sql" />
+    <Build Include="dbo\Functions\fn_Color_Exists.sql" />
+    <Build Include="dbo\Functions\fn_Serial_Exists.sql" />
+    <Build Include="dbo\Functions\fn_Package_Exists.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_Exists.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_NumberCanBeChanged.sql" />
+    <Build Include="dbo\Functions\fn_Package_CanBeEdited.sql" />
+    <Build Include="dbo\Functions\fn_Package_TicketsCount.sql" />
+    <Build Include="dbo\Functions\fn_Number_GetFirstDigit.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_CanBeEdited.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_GetPackageId.sql" />
   </ItemGroup>
 </Project>

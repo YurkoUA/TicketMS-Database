@@ -1,17 +1,15 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_MakeDefault]
-	@Id			INT,
-	@ColorId	INT,
-	@SerialId	INT,
-	@FirstDigit	INT
+	@id			INT,
+	@colorId	INT,
+	@serialId	INT,
+	@firstDigit	INT
 AS
-	DECLARE @isSpecial BIT = 0
-
 	UPDATE [Package]
 		SET [Name] = NULL,
-			[IsSpecial] = @isSpecial,
-			[ColorId] = @ColorId,
-			[SerialId] = @SerialId,
-			[FirstDigit] = @FirstDigit
+			[IsSpecial] = 0,
+			[ColorId] = @colorId,
+			[SerialId] = @serialId,
+			[FirstDigit] = @firstDigit
 
-	WHERE [Id] = @Id
+	WHERE [Id] = @id
 RETURN 0

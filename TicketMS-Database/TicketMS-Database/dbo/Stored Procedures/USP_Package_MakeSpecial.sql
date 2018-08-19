@@ -1,14 +1,14 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_MakeSpecial]
-	@Id				INT,
-	@Name			NVARCHAR (64),
-	@ResetColor		BIT,
-	@ResetSerial	BIT
+	@id				INT,
+	@name			NVARCHAR (64),
+	@resetColor		BIT,
+	@resetSerial	BIT
 AS
 	UPDATE [Package]
-		SET [Name] = @Name,
-			[ColorId] = IIF(@ResetColor = 1, [ColorId], NULL),
-			[SerialId] = IIF(@ResetSerial = 1, [SerialId], NULL),
+		SET [Name] = @name,
+			[ColorId] = IIF(@resetColor = 1, [ColorId], NULL),
+			[SerialId] = IIF(@resetSerial = 1, [SerialId], NULL),
 			[FirstDigit] = NULL
 
-		WHERE [Id] = @Id
+		WHERE [Id] = @id
 RETURN 0
