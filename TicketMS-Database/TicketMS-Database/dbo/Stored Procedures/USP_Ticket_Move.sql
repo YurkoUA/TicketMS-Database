@@ -2,9 +2,7 @@
 	@ticketId	INT,
 	@packageId	INT
 AS
-	UPDATE [Ticket] SET 
-		[PackageId] = @packageId,
-		[LastMovedDate] = GETUTCDATE()
+	UPDATE [Ticket] SET [PackageId] = @packageId
 	WHERE [Id] = @ticketId
 
 RETURN 0

@@ -2,8 +2,6 @@
 	@ticketsIds	IntArrayType READONLY,
 	@packageId	INT
 AS
-	UPDATE [Ticket] SET 
-		[PackageId] = @packageId,
-		[LastMovedDate] = GETUTCDATE()
+	UPDATE [Ticket] SET [PackageId] = @packageId
 	WHERE [Id] IN (SELECT [Item] FROM @ticketsIds)
 RETURN 0

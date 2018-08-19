@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [dbo].[fn_Report_GetLastId] ()
+RETURNS INT
+AS
+BEGIN
+	RETURN (SELECT TOP 1 [Id] FROM [Report] ORDER BY [Id] DESC)
+END

@@ -8,8 +8,7 @@
 	[SerialNumber] NVARCHAR (2)   NOT NULL,
 	[Note]         NVARCHAR (128) NULL,
 	[Date]         NVARCHAR (32)  NULL,
-	[CreatedDate]  DATETIME       NOT NULL DEFAULT((GETUTCDATE())),
-	[LastMovedDate]DATETIME		  NULL
+	[CreatedDate]  DATETIME       NOT NULL DEFAULT((GETUTCDATE()))
 
 	CONSTRAINT [PK_dbo.Ticket] PRIMARY KEY CLUSTERED ([Id] ASC),
 	CONSTRAINT [FK_dbo.Ticket_dbo.Color_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
