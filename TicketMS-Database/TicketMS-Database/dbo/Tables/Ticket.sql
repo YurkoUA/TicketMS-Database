@@ -11,10 +11,10 @@
 	[CreatedDate]  DATETIME       NOT NULL DEFAULT((GETUTCDATE())),
 	[LastMovedDate]DATETIME		  NULL
 
-	CONSTRAINT [PK_dbo.Tickets] PRIMARY KEY CLUSTERED ([Id] ASC),
-	CONSTRAINT [FK_dbo.Tickets_dbo.Colors_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
-	CONSTRAINT [FK_dbo.Tickets_dbo.Packages_PackageId] FOREIGN KEY ([PackageId]) REFERENCES [dbo].[Package] ([Id]),
-	CONSTRAINT [FK_dbo.Tickets_dbo.Serials_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),
+	CONSTRAINT [PK_dbo.Ticket] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_dbo.Ticket_dbo.Color_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
+	CONSTRAINT [FK_dbo.Ticket_dbo.Package_PackageId] FOREIGN KEY ([PackageId]) REFERENCES [dbo].[Package] ([Id]),
+	CONSTRAINT [FK_dbo.Ticket_dbo.Serial_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),
 	CONSTRAINT [FK_dbo.Tickes_dbo.Nominal_NominalId] FOREIGN KEY ([NominalId]) REFERENCES [dbo].[Nominal] ([Id])
 );
 

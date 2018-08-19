@@ -1,6 +1,8 @@
 ﻿CREATE TABLE [dbo].[Nominal]
 (
-	[Id]		INT		NOT NULL PRIMARY KEY,
+	[Id]		INT		NOT NULL IDENTITY (1, 1),
 	[Price]		MONEY	NOT NULL UNIQUE,
-	[IsDefault] BIT		NOT NULL DEFAULT(0)
+	[IsDefault] BIT		NOT NULL DEFAULT(0),
+
+	CONSTRAINT [PK_dbo.Nominal] PRIMARY KEY CLUSTERED ([Id] ASC)
 )
