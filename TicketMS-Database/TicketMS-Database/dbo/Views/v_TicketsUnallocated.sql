@@ -1,20 +1,20 @@
 ﻿CREATE VIEW [dbo].[v_TicketsUnallocated]
 AS
 
-SELECT [t].[Id]
-		,[t].[Number]
-		,[t].[SerialNumber]
-		,[t].[CreatedDate]
-		,[t].[Date]
-		,[t].[Note]
-		,LEFT([t].[Number], 1)				AS [FirstDigit]
-		,[fn_Number_IsHappy]([t].[Number])	AS [IsHappy]
+SELECT	[t].[Id],
+		[t].[Number],
+		[t].[SerialNumber],
+		[t].[CreatedDate],
+		[t].[Date],
+		[t].[Note],
+		[dbo].[fn_Number_GetFirstDigit]([t].[Number])	AS [FirstDigit],
+		[fn_Number_IsHappy]([t].[Number])				AS [IsHappy],
+		
+		[s].[Id]										AS [SerialId],
+		[s].[Name]										AS [SerialName],
 
-		,[s].[Id]							AS [SerialId]
-		,[s].[Name]							AS [SerialName]
-
-		,[c].[Id]							AS [ColorId]
-		,[c].[Name]							AS [ColorName]
+		[c].[Id]										AS [ColorId],
+		[c].[Name]										AS [ColorName]
 
 FROM [Ticket] AS [t]
 

@@ -1,27 +1,27 @@
 ﻿CREATE VIEW [dbo].[v_Packages]
 AS
 
-SELECT	[p].[Id]			AS [Id]
-		,IIF([p].[IsSpecial] = 1, [p].[Name], CONCAT([s].[Name], '-', [c].[Name], IIF([FirstTicket].[Number] IS NOT NULL, CONCAT(' (', [FirstTicket].[Number], ')'), ''))) 
-							AS [Name]
-		,[p].[IsOpened]
-		,[p].[IsSpecial]
-		,[p].[FirstDigit]
-		,[p].[Note]
-		,[p].[CreatedDate]
-		,COUNT([t].[Id])	AS [TicketsCount]
+SELECT	[p].[Id]			AS [Id],
+		IIF([p].[IsSpecial] = 1, [p].[Name], CONCAT([s].[Name], '-', [c].[Name], IIF([FirstTicket].[Number] IS NOT NULL, CONCAT(' (', [FirstTicket].[Number], ')'), ''))) 
+							AS [Name],
+		[p].[IsOpened],
+		[p].[IsSpecial],
+		[p].[FirstDigit],
+		[p].[Note],
+		[p].[CreatedDate],
+		COUNT([t].[Id])		AS [TicketsCount],
 
 		-- Serial
-		,[s].[Id]			AS [SerialId]
-		,[s].[Name]			AS [SerialName]
+		[s].[Id]			AS [SerialId],
+		[s].[Name]			AS [SerialName],
 
 		-- Color
-		,[c].[Id]			AS [ColorId]
-		,[c].[Name]			AS [ColorName]
+		[c].[Id]			AS [ColorId],
+		[c].[Name]			AS [ColorName],
 
 		-- Nominal
-		,[n].[Id]			AS [NominalId]
-		,[n].[Price]
+		[n].[Id]			AS [NominalId],
+		[n].[Price]
 
 FROM [Package] AS [p]
 
@@ -38,21 +38,21 @@ CROSS APPLY
 		ORDER BY [Ticket].[Id]
 	) AS [FirstTicket]
 
-GROUP BY [p].[Id]
-		,[p].[Name]
-		,[p].[IsOpened]
-		,[p].[IsSpecial]
-		,[p].[FirstDigit]
-		,[p].[Note]
-		,[p].[CreatedDate]
+GROUP BY [p].[Id],
+		 [p].[Name],
+		 [p].[IsOpened],
+		 [p].[IsSpecial],
+		 [p].[FirstDigit],
+		 [p].[Note],
+		 [p].[CreatedDate],
 
-		,[c].[Id]
-		,[c].[Name]
+		 [c].[Id],
+		 [c].[Name],
 
-		,[s].[Id]
-		,[s].[Name]
+		 [s].[Id],
+		 [s].[Name],
 
-		,[n].[Id]
-		,[n].[Price]
-
-		,[FirstTicket].[Number]
+		 [n].[Id],
+		 [n].[Price],
+		 
+		 [FirstTicket].[Number]

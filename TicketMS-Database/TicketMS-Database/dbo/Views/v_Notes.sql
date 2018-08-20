@@ -1,8 +1,8 @@
 ﻿CREATE VIEW [dbo].[v_Notes]
 AS
 
-SELECT [t].[Note]	AS [Note]
-		,COUNT(*)	AS [TicketsCount]
+SELECT	[t].[Note]	AS [Note],
+		COUNT(*)	AS [TicketsCount]
 
 FROM [Ticket] AS [t]
 WHERE [t].[Note] IS NOT NULL

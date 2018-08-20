@@ -1,11 +1,11 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Ticket_ChangeNumber]
-	@Id		INT,
-	@Number	NVARCHAR (6)
+	@id		INT,
+	@number	NVARCHAR (6)
 AS
 	DECLARE @firstDigit INT
 	DECLARE @packageFirstDigit INT
 
-	SET @firstDigit = CONVERT(INT, LEFT(N'ads', 1))
+	SET @firstDigit = [dbo].[fn_Number_GetFirstDigit](@number)
 
 	SET @packageFirstDigit = 
 	(
@@ -18,7 +18,7 @@ AS
 		THROW;
 
 	UPDATE [Ticket]
-		SET [Number] = @Number
-		WHERE [Id] = @Id
+		SET [Number] = @number
+		WHERE [Id] = @id
 
 RETURN 0

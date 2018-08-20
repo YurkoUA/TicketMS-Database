@@ -1,26 +1,26 @@
 ﻿CREATE VIEW [dbo].[v_Tickets]
 AS
 
-SELECT	[t].[Id]
-		,[t].[Number]
-		,[t].[SerialNumber]
-		,[t].[CreatedDate]
-		,[t].[Date]
-		,[t].[Note]
-		,LEFT([t].[Number], 1)				AS [FirstDigit]
-		,[fn_Number_IsHappy]([t].[Number])	AS [IsHappy]
+SELECT	[t].[Id],
+		[t].[Number],
+		[t].[SerialNumber],
+		[t].[CreatedDate],
+		[t].[Date],
+		[t].[Note],
+		[dbo].[fn_Number_GetFirstDigit]([t].[Number])			AS [FirstDigit],
+		[fn_Number_IsHappy]([t].[Number])						AS [IsHappy],
 
-		,[p].[Id]							AS [PackageId]
-		,[p].[Name]							AS [PackageName]
+		[p].[Id]												AS [PackageId],
+		[p].[Name]												AS [PackageName],
 
-		,[s].[Id]							AS [SerialId]
-		,[s].[Name]							AS [SerialName]
+		[s].[Id]												AS [SerialId],
+		[s].[Name]												AS [SerialName],
 
-		,[c].[Id]							AS [ColorId]
-		,[c].[Name]							AS [ColorName]
+		[c].[Id]												AS [ColorId],
+		[c].[Name]												AS [ColorName],
 
-		,[n].[Id]							AS [NominalId]
-		,[n].[Price]
+		[n].[Id]												AS [NominalId],
+		[n].[Price]
 
 FROM [Ticket] AS [t]
 

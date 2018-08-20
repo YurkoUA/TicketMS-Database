@@ -3,9 +3,9 @@
 	@endDate			DATETIME,
 	@onlyUnallocated	BIT = 0
 AS
-	SELECT	CONCAT([t].[SerialName], '-', [t].[ColorName], ' (', [t].[FirstDigit], ')') AS [Name],
-		COUNT(*)																		AS [Count],
-		SUM(CASE [dbo].[fn_Number_IsHappy]([t].[Number]) WHEN 1 THEN 1 ELSE 0 END)		AS [HappyCount]
+	SELECT	CONCAT([t].[SerialName], '-', [t].[ColorName], ' (', [t].[FirstDigit], ')')		AS [Name],
+			COUNT(*)																		AS [Count],
+			SUM(CASE [dbo].[fn_Number_IsHappy]([t].[Number]) WHEN 1 THEN 1 ELSE 0 END)		AS [HappyCount]
 
 	FROM [v_Tickets] AS [t]
 
