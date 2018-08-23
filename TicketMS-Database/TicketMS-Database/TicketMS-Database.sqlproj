@@ -66,6 +66,8 @@
     <Folder Include="dbo\Views" />
     <Folder Include="dbo\User Defined Types" />
     <Folder Include="dbo\Functions" />
+    <Folder Include="Scripts" />
+    <Folder Include="Scripts\Post-Deployment" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\Color.sql" />
@@ -165,8 +167,13 @@
     <Build Include="dbo\Stored Procedures\USP_Serial_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Nominal_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_Delete.sql" />
+    <Build Include="dbo\Tables\ReportType.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Post-Deployment\0002_ReportType_Insert.sql" />
+    <None Include="Scripts\Post-Deployment\0001_Role_Insert.sql" />
   </ItemGroup>
 </Project>

@@ -6,9 +6,11 @@ SELECT	[r].[Id],
 		[r].[IsAutomatic],
 
 		[d].[Id] AS [DocumentId],
-		[d].[Type],
-		[d].[FileUrl]
+		[d].[FileUrl],
+
+		[t].[Id] AS [TypeId],
+		[t].[Name]
 
 FROM [Report] AS [r]
-JOIN [ReportDocument] AS [d]
-	ON [d].[ReportId] = [r].[Id]
+JOIN [ReportDocument] AS [d] ON [d].[ReportId] = [r].[Id]
+JOIN [ReportType] AS [t] ON [t].[Id] = [d].[TypeId]
