@@ -156,6 +156,7 @@
     <Build Include="dbo\Functions\fn_ReportPackage_TicketsCount.sql" />
     <Build Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount_1.sql" />
     <Build Include="dbo\Stored Procedures\USP_ReportPackage_Insert.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Color_Create.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
