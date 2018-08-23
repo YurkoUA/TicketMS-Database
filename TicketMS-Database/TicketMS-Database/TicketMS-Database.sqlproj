@@ -157,6 +157,14 @@
     <Build Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount_1.sql" />
     <Build Include="dbo\Stored Procedures\USP_ReportPackage_Insert.sql" />
     <Build Include="dbo\Stored Procedures\USP_Color_Create.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Color_Update.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Color_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Serial_Create.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Serial_Update.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Serial_Delete.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Serial_SetDefault.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Nominal_SetDefault.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />

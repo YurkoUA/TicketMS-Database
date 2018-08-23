@@ -5,10 +5,14 @@
 	@nominalId	INT,
 	@note		NVARCHAR(128)
 AS
-	DECLARE @id INT
+	IF ([dbo].[fn_Package_Exists](@name) = 1)
+	BEGIN;
+		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Спеціальна пачка з іменем "', @name, N'" вже існує.');
+		THROW 50001, @msg, 1;
+	END
 
 	INSERT INTO [Package]([Name], [ColorId], [SerialId], [NominalId], [Note], [IsSpecial])
 		VALUES (@name, @colorId, @serialId, @nominalId, @note, 1)
 
-	SELECT @id = SCOPE_IDENTITY()
+	DECLARE @id INT = SCOPE_IDENTITY()
 RETURN @id

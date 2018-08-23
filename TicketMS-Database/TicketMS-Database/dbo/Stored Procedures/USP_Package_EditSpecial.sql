@@ -6,6 +6,14 @@
 	@nominalId	INT,
 	@note		NVARCHAR(128)
 AS
+	IF ([dbo].[fn_Package_Exists](@name, @id) = 1)
+	BEGIN;
+		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Спеціальна пачка з іменем "', @name, N'" вже існує.');
+		THROW 50002, @msg, 1;
+	END
+
+	-- TODO: CanBeEdited.
+
 	UPDATE [Package] SET
 		[Name] = @name,
 		[ColorId] = @colorId,
