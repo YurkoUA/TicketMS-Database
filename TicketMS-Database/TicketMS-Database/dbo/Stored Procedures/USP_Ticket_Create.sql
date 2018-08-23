@@ -8,11 +8,14 @@
 	@note			NVARCHAR(128),
 	@date			NVARCHAR(32)
 AS
-	DECLARE @id INT
+	IF ([dbo].[fn_Ticket_Exists](@number, @colorId, @serialId, @serialNumber) = 1)
+	BEGIN;
+		THROW 50001, N'Даний квиток вже існує.', 1;
+	END
 
 	INSERT INTO [Ticket]([Number], [PackageId], [NominalId], [ColorId], [SerialId], [SerialNumber], [Note], [Date])
 		VALUES(@number, @packageId, @nominalId, @colorId, @serialId, @serialNumber, @note, @date)
 
-	SELECT @id = SCOPE_IDENTITY()
+	DECLARE @id INT = SCOPE_IDENTITY()
 
 RETURN @id

@@ -9,6 +9,11 @@
 	@note			NVARCHAR(128),
 	@date			NVARCHAR(32)
 AS
+	IF ([dbo].[fn_Ticket_Exists](@number, @colorId, @serialId, @serialNumber, @id) = 1)
+	BEGIN;
+		THROW 50002, N'Даний квиток вже існує.', 1;
+	END
+
 	UPDATE [Ticket] SET
 		[Number] = @number,
 		[PackageId] = @packageId,

@@ -2,23 +2,13 @@
 	@id		INT,
 	@number	NVARCHAR (6)
 AS
-	DECLARE @firstDigit INT
-	DECLARE @packageFirstDigit INT
+	IF ([dbo].[fn_Ticket_NumberCanBeChanged](@number) = 0)
+	BEGIN;
+		THROW 50002, N'Номер не може бути змінено.', 1;
+	END
 
-	SET @firstDigit = [dbo].[fn_Number_GetFirstDigit](@number)
-
-	SET @packageFirstDigit = 
-	(
-		SELECT [p].[FirstDigit]
-		FROM [Ticket] AS [t]
-		LEFT JOIN [Package] AS [p] ON [p].[Id] = [t].[PackageId]
-	)
-
-	IF (@packageFirstDigit IS NOT NULL AND @packageFirstDigit != @firstDigit)
-		THROW;
-
-	UPDATE [Ticket]
-		SET [Number] = @number
+	UPDATE [Ticket] SET
+		[Number] = @number
 		WHERE [Id] = @id
 
 RETURN 0

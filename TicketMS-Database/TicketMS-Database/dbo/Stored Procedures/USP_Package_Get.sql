@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[USP_Packages_Get]
+﻿CREATE PROCEDURE [dbo].[USP_Package_Get]
 	@id INT
 AS
 	SELECT	[p].[Id],

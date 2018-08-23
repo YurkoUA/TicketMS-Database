@@ -6,7 +6,7 @@
 RETURNS BIT
 AS
 BEGIN
-	DECLARE @firstDigit INT = (CONVERT(INT, LEFT(@newNumber, 1)))
+	DECLARE @firstDigit INT = [dbo].[fn_Number_GetFirstDigit](@newNumber)
 	DECLARE @packageFirstDigit INT
 
 	SELECT @packageFirstDigit = [p].[FirstDigit]

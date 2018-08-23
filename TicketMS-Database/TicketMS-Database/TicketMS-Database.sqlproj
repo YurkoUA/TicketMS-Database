@@ -142,7 +142,7 @@
     <Build Include="dbo\Stored Procedures\USP_Ticket_Get.sql" />
     <Build Include="dbo\Functions\fn_Ticket_GetDuplicatesWithCount.sql" />
     <Build Include="dbo\Functions\fn_Ticket_FilterCount.sql" />
-    <Build Include="dbo\Stored Procedures\USP_Packages_Get.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Package_Get.sql" />
     <Build Include="dbo\Functions\fn_Color_Exists.sql" />
     <Build Include="dbo\Functions\fn_Serial_Exists.sql" />
     <Build Include="dbo\Functions\fn_Package_Exists.sql" />
@@ -168,6 +168,7 @@
     <Build Include="dbo\Stored Procedures\USP_Nominal_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_Delete.sql" />
     <Build Include="dbo\Tables\ReportType.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Login_GetList.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
