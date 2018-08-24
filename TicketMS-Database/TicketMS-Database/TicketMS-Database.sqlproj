@@ -179,6 +179,12 @@
     <Build Include="dbo\Stored Procedures\USP_User_Find.sql" />
     <Build Include="dbo\Stored Procedures\USP_Ticket_SummaryByPackage.sql" />
     <Build Include="dbo\Stored Procedures\USP_User_ChangePassword.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_NumberExists.sql" />
+    <Build Include="dbo\Views\v_TicketsTotal.sql" />
+    <Build Include="dbo\Views\v_PackagesTotal.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_CanBeMoved.sql" />
+    <Build Include="dbo\Functions\fn_Package_IsOpened.sql" />
+    <Build Include="dbo\Functions\fn_Ticket_CanManyBeMoved.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
