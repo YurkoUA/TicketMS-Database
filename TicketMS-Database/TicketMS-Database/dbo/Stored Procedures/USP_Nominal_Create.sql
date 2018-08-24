@@ -1,12 +1,12 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Nominal_Create]
-	@price MONEY
+	@value MONEY
 AS
-	IF ([dbo].[fn_Nominal_Exists](@price) = 1)
+	IF ([dbo].[fn_Nominal_Exists](@value) = 1)
 	BEGIN;
-		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Номінал значенням "', @price, N'" вже існує.');
+		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Номінал значенням "', @value, N'" вже існує.');
 		THROW 50001, @msg, 1;
 	END
 
-	INSERT INTO [Nominal]([Price]) VALUES (@price)
+	INSERT INTO [Nominal]([Value]) VALUES (@value)
 
 RETURN SCOPE_IDENTITY()

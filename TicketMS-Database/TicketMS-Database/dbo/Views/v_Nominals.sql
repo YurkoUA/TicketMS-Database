@@ -2,7 +2,7 @@
 AS
 
 SELECT	[n].[Id],
-		[n].[Price],
+		[n].[Value],
 		[n].[IsDefault],
 		COALESCE([p].[PackagesCount], 0)	AS [PackagesCount],
 		COALESCE([t].[TicketsCount], 0)		AS [TicketsCount]

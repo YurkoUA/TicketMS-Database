@@ -21,7 +21,7 @@ AS
 
 			-- Nominal
 			[p].[NominalId]		AS [Id],
-			[p].[Price]
+			[p].[Value]
 
 	FROM [v_Packages] AS [p]
 	WHERE [p].[Id] = @id

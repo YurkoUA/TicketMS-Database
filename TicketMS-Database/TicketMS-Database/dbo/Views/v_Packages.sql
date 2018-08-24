@@ -21,7 +21,7 @@ SELECT	[p].[Id]			AS [Id],
 
 		-- Nominal
 		[n].[Id]			AS [NominalId],
-		[n].[Price]
+		[n].[Value]
 
 FROM [Package] AS [p]
 
@@ -53,6 +53,6 @@ GROUP BY [p].[Id],
 		 [s].[Name],
 
 		 [n].[Id],
-		 [n].[Price],
+		 [n].[Value],
 		 
 		 [FirstTicket].[Number]

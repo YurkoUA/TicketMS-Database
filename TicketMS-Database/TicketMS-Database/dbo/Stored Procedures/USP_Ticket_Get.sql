@@ -25,7 +25,7 @@ AS
 
 			-- Nominal
 			[t].[NominalId]		AS [Id],
-			[t].[Price]
+			[t].[Value]
 
 
 	FROM [v_Tickets] AS [t]

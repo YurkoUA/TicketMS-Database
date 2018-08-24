@@ -20,7 +20,7 @@ SELECT	[t].[Id],
 		[c].[Name]												AS [ColorName],
 
 		[n].[Id]												AS [NominalId],
-		[n].[Price]
+		[n].[Value]
 
 FROM [Ticket] AS [t]
 
