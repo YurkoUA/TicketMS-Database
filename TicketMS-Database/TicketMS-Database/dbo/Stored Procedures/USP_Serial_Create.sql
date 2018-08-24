@@ -10,4 +10,5 @@ AS
 
 	INSERT INTO [Serial]([Name], [Note])
 		VALUES(@name, @note)
-RETURN 0
+
+RETURN SCOPE_IDENTITY()

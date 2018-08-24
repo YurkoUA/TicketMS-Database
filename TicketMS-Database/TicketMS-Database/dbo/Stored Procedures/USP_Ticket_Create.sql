@@ -16,6 +16,4 @@ AS
 	INSERT INTO [Ticket]([Number], [PackageId], [NominalId], [ColorId], [SerialId], [SerialNumber], [Note], [Date])
 		VALUES(@number, @packageId, @nominalId, @colorId, @serialId, @serialNumber, @note, @date)
 
-	DECLARE @id INT = SCOPE_IDENTITY()
-
-RETURN @id
+RETURN SCOPE_IDENTITY()

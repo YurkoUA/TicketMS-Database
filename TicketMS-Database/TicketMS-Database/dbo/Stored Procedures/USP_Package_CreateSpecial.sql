@@ -14,5 +14,4 @@ AS
 	INSERT INTO [Package]([Name], [ColorId], [SerialId], [NominalId], [Note], [IsSpecial])
 		VALUES (@name, @colorId, @serialId, @nominalId, @note, 1)
 
-	DECLARE @id INT = SCOPE_IDENTITY()
-RETURN @id
+RETURN SCOPE_IDENTITY()

@@ -3,7 +3,7 @@
 AS
 	IF ([dbo].[fn_Serial_CanBeDeleted](@id) = 0)
 	BEGIN;
-		DECLARE @msg NVARCHAR(MAX) = N'Серію не може бути видалено, оскільки є пачки або квитки, що посилаються на нього';
+		DECLARE @msg NVARCHAR(MAX) = N'Серію не може бути видалено, оскільки є пачки або квитки, що посилаються на неї.';
 		THROW 50003, @msg, 1;
 	END
 

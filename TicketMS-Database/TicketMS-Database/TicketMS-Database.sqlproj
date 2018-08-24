@@ -171,6 +171,11 @@
     <Build Include="dbo\Stored Procedures\USP_Login_GetList.sql" />
     <Build Include="dbo\User Defined Types\UDT_ReportDocument.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_Create.sql" />
+    <Build Include="dbo\Functions\fn_Nominal_Exists.sql" />
+    <Build Include="dbo\Functions\fn_Nominal_CanBeDeleted.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Nominal_Create.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Nominal_Update.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Nominal_Delete.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />

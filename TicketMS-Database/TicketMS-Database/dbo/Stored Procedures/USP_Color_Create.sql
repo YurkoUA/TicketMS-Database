@@ -10,4 +10,5 @@ AS
 
 	INSERT INTO [Color]([Name], [PaletteName])
 		VALUES (@name, @paletteName)
-RETURN 0
+
+RETURN SCOPE_IDENTITY()
