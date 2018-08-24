@@ -1,9 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_Find]
-	@Name NVARCHAR(MAX)
+	@name NVARCHAR(MAX)
 AS
 	SELECT *
 	FROM [v_Packages] AS [p]
-	WHERE [p].[Name] LIKE CONCAT('%', @Name, '%')
+	WHERE [p].[Name] LIKE CONCAT('%', @name, '%')
 	ORDER BY [p].[Id]
 
 RETURN 0

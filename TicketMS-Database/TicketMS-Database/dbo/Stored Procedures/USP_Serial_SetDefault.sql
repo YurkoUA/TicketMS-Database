@@ -18,12 +18,12 @@ AS
 		IF @@TRANCOUNT > 0
 		BEGIN
 			ROLLBACK TRANSACTION @transactionName;
-        END;
-        THROW;
+		END;
+		THROW;
 	END CATCH;
 
 	IF @@TRANCOUNT > 0
-    BEGIN
+	BEGIN
 		COMMIT TRANSACTION @TransactionName;
-    END;
+	END;
 RETURN 0

@@ -4,6 +4,8 @@ AS
 	SELECT	[u].[Id],
 			[u].[Email],
 			[u].[UserName],
+			[u].[PasswordHash],
+			[u].[Salt],
 
 			-- Role
 			[r].[Id],
