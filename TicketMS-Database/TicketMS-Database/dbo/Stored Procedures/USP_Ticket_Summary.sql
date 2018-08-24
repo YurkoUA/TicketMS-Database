@@ -1,7 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Ticket_Summary]
 	@startDate			DATETIME,
-	@endDate			DATETIME,
-	@onlyUnallocated	BIT = 0
+	@endDate			DATETIME
 AS
 	SELECT	CONCAT([t].[SerialName], '-', [t].[ColorName], ' (', [t].[FirstDigit], ')')		AS [Name],
 			COUNT(*)																		AS [Count],
@@ -10,7 +9,6 @@ AS
 	FROM [v_Tickets] AS [t]
 
 	WHERE [t].[CreatedDate] BETWEEN @startDate AND @endDate
-		AND (([t].[PackageId] IS NULL AND @onlyUnallocated = 1) OR @onlyUnallocated = 0)
 
 	GROUP BY [t].[SerialName], [t].[ColorName], [t].[FirstDigit]
 	ORDER BY [Count] DESC
