@@ -186,6 +186,8 @@
     <Build Include="dbo\Functions\fn_Package_IsOpened.sql" />
     <Build Include="dbo\Functions\fn_Ticket_CanManyBeMoved.sql" />
     <Build Include="dbo\Views\v_TicketsUnallocatedSummary.sql" />
+    <Build Include="dbo\Views\v_TicketsReportFromDefaultAndUnallocated.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_GetBetweenDates.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />

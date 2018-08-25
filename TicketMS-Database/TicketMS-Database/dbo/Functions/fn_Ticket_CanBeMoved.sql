@@ -9,47 +9,18 @@ BEGIN
 	IF ([dbo].[fn_Package_IsOpened](@packageId) = 0)
 		RETURN 0
 
-	DECLARE @ticketFirstDigit	INT,
-			@ticketSerialId		INT,
-			@ticketColorId		INT,
-			@ticketNominalId	INT
 
-	DECLARE @packageFirstDigit	INT,
-			@packageSerialId	INT,
-			@packageColorId		INT,
-			@packageNominalId	INT
+	IF EXISTS	(
+					SELECT 1 FROM [Ticket] AS [t]
+					JOIN [Package] AS [p] ON [p].[Id] = @packageId
+					WHERE t.[Id] = @ticketId
+						AND t.[NominalId] = p.[NominalId]
+						AND (p.[FirstDigit] IS NULL OR [dbo].[fn_Number_GetFirstDigit](t.[Number]) = p.[FirstDigit])
+						AND (p.[ColorId] IS NULL OR t.[ColorId] = p.[ColorId])
+						AND (p.[SerialId] IS NULL OR t.[SerialId] = p.[SerialId])
 
-
-
-	SELECT	@ticketFirstDigit = [dbo].[fn_Number_GetFirstDigit]([Number]),
-			@ticketSerialId = [SerialId],
-			@ticketColorId = [ColorId],
-			@ticketNominalId = [NominalId]
-	FROM [Ticket]
-	WHERE [Id] = @ticketId
-
+				)
+		RETURN 1
 	
-
-	SELECT	@packageFirstDigit = [FirstDigit],
-			@packageSerialId = [SerialId],
-			@packageColorId = [ColorId],
-			@packageNominalId = [NominalId]
-	FROM [Package]
-	WHERE [Id] = @packageId
-
-
-
-	IF (@packageFirstDigit IS NOT NULL AND @packageFirstDigit != @ticketFirstDigit)
-		RETURN 0
-
-	IF (@packageSerialId IS NOT NULL AND @packageSerialId != @ticketSerialId)
-		RETURN 0
-
-	IF (@packageColorId IS NOT NULL AND @packageColorId != @ticketColorId)
-		RETURN 0
-
-	IF (@packageNominalId != @ticketNominalId)
-		RETURN 0
-
-	RETURN 1
+	RETURN 0
 END

@@ -9,36 +9,17 @@ BEGIN
 	IF ([dbo].[fn_Package_IsOpened](@packageId) = 0)
 		RETURN 0
 
-	DECLARE @toMoveCount INT,
-			@compatibleCount INT
 
-	DECLARE @packageFirstDigit	INT,
-			@packageSerialId	INT,
-			@packageColorId		INT,
-			@packageNominalId	INT
+	IF EXISTS	(
+					SELECT 1 FROM [Ticket] AS [t]
+					JOIN [Package] AS [p] ON [p].[Id] = @packageId
+					WHERE t.[Id] IN (SELECT [Item] FROM @ticketsIds)
+						AND t.[NominalId] = p.[NominalId]
+						AND (p.[FirstDigit] IS NULL OR [dbo].[fn_Number_GetFirstDigit](t.[Number]) = p.[FirstDigit])
+						AND (p.[ColorId] IS NULL OR t.[ColorId] = p.[ColorId])
+						AND (p.[SerialId] IS NULL OR t.[SerialId] = p.[SerialId])
 
-
-
-	SELECT	@packageFirstDigit = [FirstDigit],
-			@packageSerialId = [SerialId],
-			@packageColorId = [ColorId],
-			@packageNominalId = [NominalId]
-	FROM [Package]
-	WHERE [Id] = @packageId
-
-
-	SELECT @toMoveCount = COUNT(*) FROM @ticketsIds
-
-
-	SELECT @compatibleCount = COUNT(*) FROM [Ticket]
-	WHERE [Id] IN (SELECT [Item] FROM @ticketsIds)
-		AND (@packageFirstDigit IS NULL OR [dbo].[fn_Number_GetFirstDigit]([Number]) = @packageFirstDigit)
-		AND (@packageSerialId IS NULL OR [SerialId] = @packageSerialId)
-		AND (@packageColorId IS NULL OR [ColorId] = @packageColorId)
-		AND @packageNominalId = [NominalId]
-
-
-	IF (@toMoveCount = @compatibleCount)
+				)
 		RETURN 1
 
 	RETURN 0
