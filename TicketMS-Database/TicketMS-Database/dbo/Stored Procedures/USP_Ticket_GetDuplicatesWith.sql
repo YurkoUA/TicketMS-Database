@@ -10,6 +10,6 @@ AS
 	SELECT *
 	FROM [v_Tickets] AS [t]
 	WHERE [t].[Number] = @number
-		AND [t].[Id] != @id
+		AND [t].[TicketId] != @id
 
 RETURN 0

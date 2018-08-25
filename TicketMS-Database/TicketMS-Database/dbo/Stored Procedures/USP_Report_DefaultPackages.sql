@@ -4,17 +4,18 @@
 AS
 	DECLARE @lastReportId INT = [dbo].[fn_Report_GetLastId]()
 
-	SELECT	[p].[Id],
+	SELECT	[p].[PackageId]		AS [Id],
 			[p].[SerialName],
-			[p].[Name],
-			COUNT(*) AS [TicketsCount],
-			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[Id]))	AS [NewTicketsCount]
+			[p].[PackageName]	AS [Name],
+			COUNT(*)			AS [TicketsCount],
+			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
+				AS [NewTicketsCount]
 
 	FROM [v_Packages] AS [p]
-	JOIN [Ticket] AS [t] ON [t].[PackageId] = [p].[Id]
+	JOIN [Ticket] AS [t] ON [t].[PackageId] = [p].[PackageId]
 
 	WHERE [p].[IsSpecial] = 0 AND [p].[CreatedDate] <= @endDate
 
-	GROUP BY [p].[Id], [p].[SerialName], [p].[Name]
-	ORDER BY [p].[Id]
+	GROUP BY [p].[PackageId], [p].[SerialName], [p].[PackageName]
+	ORDER BY [p].[PackageId]
 RETURN 0

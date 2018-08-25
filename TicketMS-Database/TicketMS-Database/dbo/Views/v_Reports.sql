@@ -1,14 +1,14 @@
 ﻿CREATE VIEW [dbo].[v_Reports]
 AS
 
-SELECT	[r].[Id],
+SELECT	[r].[Id]		AS [ReportId],
 		[r].[Date],
 		[r].[IsAutomatic],
 
-		[d].[Id] AS [DocumentId],
+		[d].[Id]		AS [DocumentId],
 		[d].[FileUrl],
 
-		[t].[Id] AS [TypeId],
+		[t].[Id]		AS [TypeId],
 		[t].[Name]
 
 FROM [Report] AS [r]

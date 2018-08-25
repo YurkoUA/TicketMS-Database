@@ -1,7 +1,7 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Ticket_Get]
 	@id INT
 AS
-	SELECT	[t].[Id],
+	SELECT	[t].[TicketId]		AS [Id],
 			[t].[Number],
 			[t].[SerialNumber],
 			[t].[CreatedDate],
@@ -9,7 +9,7 @@ AS
 			[t].[Note],
 			[t].[FirstDigit],
 			[t].[IsHappy],
-			[dbo].[fn_Ticket_GetDuplicatesWithCount]([t].[Id]) AS [DuplicatesCount],
+			[dbo].[fn_Ticket_GetDuplicatesWithCount](t.[TicketId]) AS [DuplicatesCount],
 
 			-- Package
 			[t].[PackageId]		AS [Id],
@@ -29,6 +29,6 @@ AS
 
 
 	FROM [v_Tickets] AS [t]
-	WHERE [t].[Id] = @id
+	WHERE [t].[TicketId] = @id
 
 RETURN 0

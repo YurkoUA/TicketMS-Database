@@ -1,8 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Package_Get]
 	@id INT
 AS
-	SELECT	[p].[Id],
-			[p].[Name],
+	SELECT	[p].[PackageId]		AS [Id],
+			[p].[PackageName]	AS [Name],
 			[p].[IsOpened],
 			[p].[IsSpecial],
 			[p].[FirstDigit],
@@ -24,6 +24,6 @@ AS
 			[p].[Value]
 
 	FROM [v_Packages] AS [p]
-	WHERE [p].[Id] = @id
+	WHERE [p].[PackageId] = @id
 
 RETURN 0

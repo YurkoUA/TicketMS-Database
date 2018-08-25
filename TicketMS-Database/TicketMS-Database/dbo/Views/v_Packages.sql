@@ -1,9 +1,9 @@
 ﻿CREATE VIEW [dbo].[v_Packages]
 AS
 
-SELECT	[p].[Id]			AS [Id],
+SELECT	[p].[Id]			AS [PackageId],
 		IIF([p].[IsSpecial] = 1, [p].[Name], CONCAT([s].[Name], '-', [c].[Name], IIF([FirstTicket].[Number] IS NOT NULL, CONCAT(' (', [FirstTicket].[Number], ')'), ''))) 
-							AS [Name],
+							AS [PackageName],
 		[p].[IsOpened],
 		[p].[IsSpecial],
 		[p].[FirstDigit],

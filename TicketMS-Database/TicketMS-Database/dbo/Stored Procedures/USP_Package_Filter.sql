@@ -11,5 +11,5 @@ AS
 		AND		((@colorId IS NOT NULL		AND [p].[ColorId] = @colorId)				OR @colorId IS NULL)
 		AND		((@nominalId IS NOT NULL	AND [p].[NominalId] = @nominalId)			OR @nominalId IS NULL)
 
-ORDER BY [p].[Id]
+ORDER BY [p].[PackageId]
 RETURN 0

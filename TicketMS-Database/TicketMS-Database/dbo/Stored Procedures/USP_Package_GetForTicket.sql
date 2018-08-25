@@ -13,6 +13,6 @@ AS
 		AND ([p].[FirstDigit]	= @firstDigit	OR [p].[FirstDigit] IS NULL)
 		AND ([p].[NominalId]	= @nominalId)
 
-	ORDER BY [p].[IsSpecial], [p].[Id]
+	ORDER BY [p].[IsSpecial], [p].[PackageId]
 
 RETURN 0

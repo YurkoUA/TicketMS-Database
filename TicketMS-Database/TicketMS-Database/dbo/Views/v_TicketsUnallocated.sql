@@ -1,7 +1,7 @@
 ﻿CREATE VIEW [dbo].[v_TicketsUnallocated]
 AS
 
-SELECT	[t].[Id],
+SELECT	[t].[Id]										AS [TicketId],
 		[t].[Number],
 		[t].[SerialNumber],
 		[t].[CreatedDate],
