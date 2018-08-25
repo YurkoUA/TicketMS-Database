@@ -14,12 +14,16 @@ SELECT	[t].[Id],
 		[s].[Name]										AS [SerialName],
 
 		[c].[Id]										AS [ColorId],
-		[c].[Name]										AS [ColorName]
+		[c].[Name]										AS [ColorName],
+
+		[n].[Id]										AS [NominalId],
+		[n].[Value]
 
 FROM [Ticket] AS [t]
 
 JOIN [Serial] AS [s] ON [s].[Id] = [t].[SerialId]
 JOIN [Color]  AS [c] ON [c].[Id] = [t].[ColorId]
+JOIN [Nominal] AS [n] ON [n].[Id] = [t].[NominalId]
 
 WHERE [t].[PackageId] IS NULL
 
