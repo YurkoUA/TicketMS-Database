@@ -1,4 +1,4 @@
-﻿CREATE PROCEDURE [dbo].[USP_TicketHappy_GetList]
+﻿CREATE PROCEDURE [dbo].[USP_Ticket_GetListHappy]
 	@offset INT = 0,
 	@take	INT = 20
 AS

@@ -7,4 +7,5 @@ AS
 
 	FROM [v_Tickets] AS [t]
 	WHERE t.[PackageId] = @packageId
+	ORDER BY [Count] DESC
 RETURN 0

@@ -118,7 +118,7 @@
     <Build Include="dbo\Views\v_TicketsReversible.sql" />
     <Build Include="dbo\Views\v_TicketsConsistent.sql" />
     <Build Include="dbo\Views\v_TicketsHappy.sql" />
-    <Build Include="dbo\Stored Procedures\USP_TicketHappy_GetList.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_GetListHappy.sql" />
     <Build Include="dbo\Tables\Nominal.sql" />
     <Build Include="dbo\Stored Procedures\USP_Ticket_GetRandom.sql" />
     <Build Include="dbo\Views\v_Nominals.sql" />
