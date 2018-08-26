@@ -1,0 +1,6 @@
+﻿CREATE FUNCTION [dbo].[fn_Report_GetLastDate]()
+RETURNS DATETIME
+AS
+BEGIN
+	RETURN (SELECT TOP 1 [Date] FROM [Report] ORDER BY [Id] DESC)
+END

@@ -13,6 +13,14 @@ AS
 		THROW 50001, N'Даний квиток вже існує.', 1;
 	END
 
+	IF @packageId IS NOT NULL
+	BEGIN;
+		IF ([dbo].[fn_Ticket_CanBeCreatedInPackage](@number, @packageId, @nominalId, @colorId, @serialId) = 0)
+		BEGIN;
+			THROW 50001, N'Квиток не сумісний за пачкою.', 1;
+		END
+	END
+
 	INSERT INTO [Ticket]([Number], [PackageId], [NominalId], [ColorId], [SerialId], [SerialNumber], [Note], [Date])
 		VALUES(@number, @packageId, @nominalId, @colorId, @serialId, @serialNumber, @note, @date)
 

@@ -13,7 +13,7 @@ BEGIN
 											AND [ColorId] = @colorId
 											AND [SerialId] = @serialId
 											AND [SerialNumber] = @serialNumber
-											AND ([Id] = @id OR @id IS NULL))
+											AND ((@id IS NOT NULL AND [Id] != @id) OR @id IS NULL))
 
 			RETURN 1
 

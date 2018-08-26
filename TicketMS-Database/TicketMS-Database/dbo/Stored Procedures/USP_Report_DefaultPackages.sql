@@ -5,8 +5,8 @@ AS
 	DECLARE @lastReportId INT = [dbo].[fn_Report_GetLastId]()
 
 	SELECT	[p].[PackageId]		AS [Id],
-			[p].[SerialName],
 			[p].[PackageName]	AS [Name],
+			[p].[SerialName],
 			COUNT(*)			AS [TicketsCount],
 			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
 				AS [NewTicketsCount]
