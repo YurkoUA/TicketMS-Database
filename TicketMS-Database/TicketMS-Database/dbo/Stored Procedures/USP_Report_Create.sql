@@ -33,4 +33,4 @@ AS
 	BEGIN
 		COMMIT TRANSACTION @TransactionName;
 	END;
-RETURN 0
+RETURN @reportId

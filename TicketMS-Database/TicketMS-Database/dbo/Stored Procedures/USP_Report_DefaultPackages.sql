@@ -9,7 +9,7 @@ AS
 			[p].[SerialName],
 			COUNT(*)			AS [TicketsCount],
 			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
-				AS [NewTicketsCount]
+								AS [NewTicketsCount]
 
 	FROM [v_Packages] AS [p]
 	JOIN [Ticket] AS [t] ON [t].[PackageId] = [p].[PackageId]
