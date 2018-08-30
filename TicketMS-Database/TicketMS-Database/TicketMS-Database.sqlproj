@@ -193,6 +193,7 @@
     <Build Include="dbo\Functions\fn_Report_GetLastDate.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_TicketsFromDefaultAndUnallocatedPackages.sql" />
     <Build Include="dbo\Stored Procedures\USP_Ticket_GetByNote.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Ticket_ByDates.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
