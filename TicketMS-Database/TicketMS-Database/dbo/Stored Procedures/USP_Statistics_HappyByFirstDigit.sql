@@ -9,6 +9,6 @@ AS
 	WHERE [t].[CreatedDate] BETWEEN @startDate AND @endDate
 		AND [dbo].[fn_Number_IsHappy]([t].[Number]) = 1
 
-	GROUP BY LEFT([t].[Number], 1)
+	GROUP BY [dbo].[fn_Number_GetFirstDigit](t.[Number])
 	ORDER BY [Name]
 RETURN 0

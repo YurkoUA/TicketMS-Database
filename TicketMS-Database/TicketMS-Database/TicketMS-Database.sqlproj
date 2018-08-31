@@ -156,7 +156,7 @@
     <Build Include="dbo\Tables\ReportPackage.sql" />
     <Build Include="dbo\Functions\fn_Report_GetLastId.sql" />
     <Build Include="dbo\Functions\fn_ReportPackage_TicketsCount.sql" />
-    <Build Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount_1.sql" />
+    <Build Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
     <Build Include="dbo\Stored Procedures\USP_ReportPackage_Insert.sql" />
     <Build Include="dbo\Stored Procedures\USP_Color_Create.sql" />
     <Build Include="dbo\Stored Procedures\USP_Color_Update.sql" />
@@ -196,10 +196,8 @@
     <Build Include="dbo\Stored Procedures\USP_Ticket_ByDates.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="dbo\Functions\fn_ReportPackage_GetNewTicketsCount.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <PostDeploy Include="Scripts\Post-Deployment\0002_ReportType_Insert.sql" />
     <None Include="Scripts\Post-Deployment\0001_Role_Insert.sql" />
+    <None Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

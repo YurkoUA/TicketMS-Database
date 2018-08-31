@@ -8,6 +8,6 @@ AS
 	FROM [Ticket] AS [t]
 	WHERE [t].[CreatedDate] BETWEEN @startDate AND @endDate
 
-	GROUP BY LEFT([t].[Number], 1)
+	GROUP BY [dbo].[fn_Number_GetFirstDigit](t.[Number])
 	ORDER BY [Name]
 RETURN 0

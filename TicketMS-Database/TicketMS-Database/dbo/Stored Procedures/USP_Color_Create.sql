@@ -2,7 +2,7 @@
 	@name			NVARCHAR(32),
 	@paletteName	NVARCHAR(32)
 AS
-	IF ([dbo].[fn_Color_Exists](@name, @paletteName) = 1)
+	IF ([dbo].[fn_Color_Exists](@name, @paletteName, NULL) = 1)
 	BEGIN;
 		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Колір з назвою "', @name, N'" або кодом "', @paletteName, N'" вже існує.');
 		THROW 50001, @msg, 1;

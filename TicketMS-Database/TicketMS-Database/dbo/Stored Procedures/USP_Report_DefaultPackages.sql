@@ -8,7 +8,7 @@ AS
 			[p].[PackageName]	AS [Name],
 			[p].[SerialName],
 			COUNT(*)			AS [TicketsCount],
-			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
+			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId, p.[PackageId]), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
 								AS [NewTicketsCount]
 
 	FROM [v_Packages] AS [p]

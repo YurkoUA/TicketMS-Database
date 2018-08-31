@@ -6,6 +6,8 @@
 	@firstDigit	INT,
 	@note		NVARCHAR(128)
 AS
+	-- TODO: Validate.
+
 	UPDATE [Package] SET
 		[ColorId] = @colorId,
 		[SerialId] = @serialId,

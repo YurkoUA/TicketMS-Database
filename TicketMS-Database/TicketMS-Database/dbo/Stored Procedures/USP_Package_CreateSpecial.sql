@@ -5,7 +5,7 @@
 	@nominalId	INT,
 	@note		NVARCHAR(128)
 AS
-	IF ([dbo].[fn_Package_Exists](@name) = 1)
+	IF ([dbo].[fn_Package_Exists](@name, NULL) = 1)
 	BEGIN;
 		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Спеціальна пачка з іменем "', @name, N'" вже існує.');
 		THROW 50001, @msg, 1;

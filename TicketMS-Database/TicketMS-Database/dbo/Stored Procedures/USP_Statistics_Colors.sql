@@ -11,6 +11,6 @@ AS
 	LEFT JOIN [Ticket] AS [t] ON [t].[ColorId] = [c].[Id]
 	WHERE [t].[CreatedDate] BETWEEN @startDate AND @endDate
 
-	GROUP BY [c].[Name]
+	GROUP BY [c].[Name], [c].[PaletteName]
 	ORDER BY [Count] DESC
 RETURN 0

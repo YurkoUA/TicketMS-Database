@@ -8,7 +8,7 @@ AS
 			[p].[PackageName]	AS [Name],
 			[p].[SerialName],
 			COUNT(*)			AS [TicketsCount],
-			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
+			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId, [p].[PackageId]), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
 								AS [NewTicketsCount]
 
 	FROM [v_Packages] AS [p]
@@ -16,6 +16,6 @@ AS
 
 	WHERE [p].[IsSpecial] = 1 AND [p].[CreatedDate] <= @endDate
 
-	GROUP BY [p].[PackageId], [p].[PackageName]
+	GROUP BY [p].[PackageId], [p].[PackageName], [p].[SerialName]
 	ORDER BY [p].[PackageId]
 RETURN 0

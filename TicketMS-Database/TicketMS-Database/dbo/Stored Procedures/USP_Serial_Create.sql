@@ -2,7 +2,7 @@
 	@name	NVARCHAR(4),
 	@note	NVARCHAR(128)
 AS
-	IF ([dbo].[fn_Serial_Exists](@name) = 1)
+	IF ([dbo].[fn_Serial_Exists](@name, NULL) = 1)
 	BEGIN;
 		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Серія з назвою "', @name, N'" вже існує.');
 		THROW 50001, @msg, 1;

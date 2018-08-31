@@ -8,7 +8,7 @@
 	@note			NVARCHAR(128),
 	@date			NVARCHAR(32)
 AS
-	IF ([dbo].[fn_Ticket_Exists](@number, @colorId, @serialId, @serialNumber) = 1)
+	IF ([dbo].[fn_Ticket_Exists](@number, @colorId, @serialId, @serialNumber, NULL) = 1)
 	BEGIN;
 		THROW 50001, N'Даний квиток вже існує.', 1;
 	END

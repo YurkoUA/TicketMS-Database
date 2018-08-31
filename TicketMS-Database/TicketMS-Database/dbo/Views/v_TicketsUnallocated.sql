@@ -8,7 +8,7 @@ SELECT	[t].[Id]										AS [TicketId],
 		[t].[Date],
 		[t].[Note],
 		[dbo].[fn_Number_GetFirstDigit]([t].[Number])	AS [FirstDigit],
-		[fn_Number_IsHappy]([t].[Number])				AS [IsHappy],
+		[dbo].[fn_Number_IsHappy]([t].[Number])				AS [IsHappy],
 		
 		[s].[Id]										AS [SerialId],
 		[s].[Name]										AS [SerialName],
