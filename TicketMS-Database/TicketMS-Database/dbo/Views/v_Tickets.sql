@@ -8,7 +8,7 @@ SELECT	[t].[Id]												AS [TicketId],
 		[t].[Date],
 		[t].[Note],
 		[dbo].[fn_Number_GetFirstDigit]([t].[Number])			AS [FirstDigit],
-		[dbo].[fn_Number_IsHappy]([t].[Number])						AS [IsHappy],
+		[dbo].[fn_Number_IsHappy]([t].[Number])					AS [IsHappy],
 
 		[p].[PackageId]											AS [PackageId],
 		[p].[PackageName]										AS [PackageName],
@@ -27,7 +27,7 @@ FROM [Ticket] AS [t]
 JOIN [Serial] AS [s] ON [s].[Id] = [t].[SerialId]
 JOIN [Color] AS [c] ON [c].[Id] = [t].[ColorId]
 JOIN [Nominal] AS [n] ON [n].[Id] = [t].[NominalId]
-LEFT JOIN [v_Packages] AS [p] ON [p].[PackageName] = [t].[PackageId]
+LEFT JOIN [v_Packages] AS [p] ON [p].[PackageId] = [t].[PackageId]
 
 ORDER BY [t].[Number]
 OFFSET 0 ROWS

@@ -11,16 +11,16 @@ FROM [Nominal] AS [n]
 
 LEFT JOIN 
 		(
-			SELECT	[Package].[SerialId],
+			SELECT	[Package].[NominalId],
 					COUNT(*) AS [PackagesCount]
 			FROM [Package]
-			GROUP BY [Package].[SerialId]
-		) AS [p] ON [p].[SerialId] = [n].[Id]
+			GROUP BY [Package].[NominalId]
+		) AS [p] ON [p].[NominalId] = [n].[Id]
 
 LEFT JOIN
 		(
-			SELECT	[Ticket].[SerialId],
+			SELECT	[Ticket].[NominalId],
 					COUNT(*) AS [TicketsCount]
 			FROM [Ticket]
-			GROUP BY [Ticket].[SerialId]
-		) AS [t] ON [t].[SerialId] = [n].[Id]
+			GROUP BY [Ticket].[NominalId]
+		) AS [t] ON [t].[NominalId] = [n].[Id]

@@ -9,5 +9,5 @@ AS
 
 	FROM [Package] AS [p]
 	WHERE [p].[CreatedDate] <= @endDate
-	GROUP BY [p].[CreatedDate], [p].[IsSpecial]
+	GROUP BY [p].[CreatedDate]
 RETURN 0
