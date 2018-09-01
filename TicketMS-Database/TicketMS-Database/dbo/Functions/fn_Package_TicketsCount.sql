@@ -5,11 +5,5 @@
 RETURNS INT
 AS
 BEGIN
-	DECLARE @count INT
-
-	SELECT @count = COUNT(*)
-	FROM [Ticket]
-	WHERE [PackageId] = [Id]
-
-	RETURN @count
+	RETURN (SELECT COUNT(*) FROM [Ticket] WHERE [PackageId] = @id)
 END

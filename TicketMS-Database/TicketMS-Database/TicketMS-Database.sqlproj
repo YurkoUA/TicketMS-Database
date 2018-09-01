@@ -196,8 +196,8 @@
     <Build Include="dbo\Stored Procedures\USP_Ticket_ByDates.sql" />
   </ItemGroup>
   <ItemGroup>
-    <PostDeploy Include="Scripts\Post-Deployment\0002_ReportType_Insert.sql" />
+    <None Include="Scripts\Post-Deployment\0002_ReportType_Insert.sql" />
     <None Include="Scripts\Post-Deployment\0001_Role_Insert.sql" />
-    <None Include="Scripts\Script.PostDeployment.sql" />
+    <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>
