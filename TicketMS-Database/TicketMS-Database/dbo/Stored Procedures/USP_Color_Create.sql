@@ -1,6 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Color_Create]
 	@name			NVARCHAR(32),
-	@paletteName	NVARCHAR(32)
+	@paletteName	NVARCHAR(32),
+
+	@id				INT OUTPUT
 AS
 	IF ([dbo].[fn_Color_Exists](@name, @paletteName, NULL) = 1)
 	BEGIN;
@@ -11,4 +13,6 @@ AS
 	INSERT INTO [Color]([Name], [PaletteName])
 		VALUES (@name, @paletteName)
 
-RETURN SCOPE_IDENTITY()
+	SET @id = SCOPE_IDENTITY()
+
+RETURN 

@@ -4,6 +4,7 @@ AS
 	SELECT	[u].[Id],
 			[u].[Email],
 			[u].[UserName],
+			[u].[TelegramId],
 			[u].[PasswordHash],
 			[u].[Salt],
 
@@ -13,8 +14,7 @@ AS
 			[r].[Description]
 
 	FROM [User] AS [u]
-	JOIN [Role] AS [r]
-		ON [r].[Id] = [u].[RoleId]
+	JOIN [Role] AS [r] ON [r].[Id] = [u].[RoleId]
 
 	WHERE [u].[Id] = @id
 RETURN 0

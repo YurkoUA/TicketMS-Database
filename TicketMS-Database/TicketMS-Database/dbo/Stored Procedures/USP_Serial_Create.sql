@@ -1,6 +1,8 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Serial_Create]
 	@name	NVARCHAR(4),
-	@note	NVARCHAR(128)
+	@note	NVARCHAR(128),
+
+	@id		INT OUTPUT
 AS
 	IF ([dbo].[fn_Serial_Exists](@name, NULL) = 1)
 	BEGIN;
@@ -11,4 +13,6 @@ AS
 	INSERT INTO [Serial]([Name], [Note])
 		VALUES(@name, @note)
 
-RETURN SCOPE_IDENTITY()
+	SET @id = SCOPE_IDENTITY()
+
+RETURN 0

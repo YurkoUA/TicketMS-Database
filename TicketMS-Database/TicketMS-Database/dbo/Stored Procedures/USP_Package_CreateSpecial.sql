@@ -3,7 +3,9 @@
 	@colorId	INT,
 	@serialId	INT,
 	@nominalId	INT,
-	@note		NVARCHAR(128)
+	@note		NVARCHAR(128),
+
+	@id			INT OUTPUT
 AS
 	IF ([dbo].[fn_Package_Exists](@name, NULL) = 1)
 	BEGIN;
@@ -14,4 +16,6 @@ AS
 	INSERT INTO [Package]([Name], [ColorId], [SerialId], [NominalId], [Note], [IsSpecial])
 		VALUES (@name, @colorId, @serialId, @nominalId, @note, 1)
 
-RETURN SCOPE_IDENTITY()
+	SET @id = SCOPE_IDENTITY()
+
+RETURN 0

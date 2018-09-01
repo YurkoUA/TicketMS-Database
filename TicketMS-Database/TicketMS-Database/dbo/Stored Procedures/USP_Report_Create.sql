@@ -1,7 +1,9 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Report_Create]
 	@date			DATETIME,
 	@isAutomatic	BIT,
-	@documents		UDT_ReportDocument READONLY
+	@documents		UDT_ReportDocument READONLY,
+
+	@id				INT OUTPUT
 AS
 	DECLARE @transactionName NVARCHAR(MAX) = 'Report_Create'
 	
@@ -33,4 +35,7 @@ AS
 	BEGIN
 		COMMIT TRANSACTION @TransactionName;
 	END;
-RETURN @reportId
+
+	SET @id = @reportId
+
+RETURN 0

@@ -1,5 +1,6 @@
 ﻿CREATE PROCEDURE [dbo].[USP_Nominal_Create]
-	@value MONEY
+	@value	MONEY,
+	@id		INT OUTPUT
 AS
 	IF ([dbo].[fn_Nominal_Exists](@value, NULL) = 1)
 	BEGIN;
@@ -9,4 +10,6 @@ AS
 
 	INSERT INTO [Nominal]([Value]) VALUES (@value)
 
-RETURN SCOPE_IDENTITY()
+	SET @id = SCOPE_IDENTITY()
+
+RETURN 0

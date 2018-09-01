@@ -6,7 +6,9 @@
 	@serialId		INT,
 	@serialNumber	NVARCHAR(2),
 	@note			NVARCHAR(128),
-	@date			NVARCHAR(32)
+	@date			NVARCHAR(32),
+
+	@id				INT OUTPUT
 AS
 	IF ([dbo].[fn_Ticket_Exists](@number, @colorId, @serialId, @serialNumber, NULL) = 1)
 	BEGIN;
@@ -24,4 +26,6 @@ AS
 	INSERT INTO [Ticket]([Number], [PackageId], [NominalId], [ColorId], [SerialId], [SerialNumber], [Note], [Date])
 		VALUES(@number, @packageId, @nominalId, @colorId, @serialId, @serialNumber, @note, @date)
 
-RETURN SCOPE_IDENTITY()
+	SET @id = SCOPE_IDENTITY()
+
+RETURN 0
