@@ -1,8 +1,9 @@
 ﻿CREATE VIEW [dbo].[v_Colors]
 AS
 
-SELECT	[c].[Id]	AS [Id],
-		[c].[Name]	AS [Name],
+SELECT	[c].[Id],
+		[c].[Name],
+		[c].[PaletteName],
 		COALESCE([p].[PackagesCount], 0)	AS [PackagesCount],
 		COALESCE([t].[TicketsCount], 0)		AS [TicketsCount]
 
