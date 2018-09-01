@@ -4,3 +4,5 @@ TicketMS-Database/.vs/
 TicketMS-Database/TicketMS-Database.dbmdl
 TicketMS-Database/TicketMS-Database/TicketMS-Database.dbmdl
 TicketMS-Database/TicketMS-Database/TicketMS-Database.jfm
+TicketMS-Database/test.py
+TicketMS-Database/__pycache__/

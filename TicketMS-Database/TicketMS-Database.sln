@@ -8,7 +8,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{CD77B5C6-211B-4BD2-AAB6-A768758CE537}"
 	ProjectSection(SolutionItems) = preProject
 		Migration.sql = Migration.sql
+		Migration_ReportDocument.py = Migration_ReportDocument.py
 		Migration_ReportPackage.sql = Migration_ReportPackage.sql
+		MigrationUtils.py = MigrationUtils.py
 	EndProjectSection
 EndProject
 Global
