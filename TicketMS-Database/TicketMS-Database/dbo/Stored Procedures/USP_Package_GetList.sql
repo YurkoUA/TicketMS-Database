@@ -3,7 +3,9 @@
 	@take	INT = 20,
 
 	@onlyOpened BIT = 0,
-	@onlySpecial BIT = 0
+	@onlySpecial BIT = 0,
+
+	@total INT OUTPUT
 AS
 	SELECT *
 	FROM [v_Packages] AS [p]
@@ -18,4 +20,6 @@ AS
 
 	OFFSET @offset ROWS
 	FETCH NEXT @take ROWS ONLY
+
+	SET @total = [dbo].[fn_Package_Count](@onlyOpened, @onlySpecial)
 RETURN 0
