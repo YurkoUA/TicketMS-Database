@@ -198,10 +198,14 @@
     <Build Include="dbo\Functions\fn_Package_Count.sql" />
     <Build Include="dbo\Functions\fn_Ticket_Count.sql" />
     <Build Include="dbo\Functions\fn_Ticket_CountHappy.sql" />
+    <Build Include="dbo\Tables\eStatistics.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_RunId.sql" />
+    <Build Include="dbo\Stored Procedures\USP_Statistics_RunAlias.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Post-Deployment\0002_eReportType_Insert.sql" />
     <None Include="Scripts\Post-Deployment\0001_eRole_Insert.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+    <None Include="Scripts\Post-Deployment\0003_eStatistics_Insert.sql" />
   </ItemGroup>
 </Project>
