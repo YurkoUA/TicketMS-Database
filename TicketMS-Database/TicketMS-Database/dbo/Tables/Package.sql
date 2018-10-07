@@ -9,10 +9,10 @@
 	[Note]        NVARCHAR (128) NULL,
 	[IsSpecial]   BIT            DEFAULT ((0)) NOT NULL,
 	[FirstDigit]  INT            NULL,
-	CONSTRAINT [PK_dbo.Package] PRIMARY KEY CLUSTERED ([Id] ASC),
-	CONSTRAINT [FK_dbo.Package_dbo.Color_ColorId] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
-	CONSTRAINT [FK_dbo.Package_dbo.Serial_SerialId] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),
-	CONSTRAINT [FK_dbo.Package_dbo.Nominal_NominalId] FOREIGN KEY ([NominalId]) REFERENCES [dbo].[Nominal] ([Id])
+	CONSTRAINT [PK_Package] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_Package_Color] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
+	CONSTRAINT [FK_Package_Serial] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),
+	CONSTRAINT [FK_Package_Nominal] FOREIGN KEY ([NominalId]) REFERENCES [dbo].[Nominal] ([Id])
 );
 
 

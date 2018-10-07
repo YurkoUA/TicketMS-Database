@@ -74,7 +74,7 @@
     <Build Include="dbo\Tables\Package.sql" />
     <Build Include="dbo\Tables\Serial.sql" />
     <Build Include="dbo\Tables\Ticket.sql" />
-    <Build Include="dbo\Tables\Role.sql" />
+    <Build Include="dbo\Tables\eRole.sql" />
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\Summary.sql" />
@@ -167,7 +167,7 @@
     <Build Include="dbo\Stored Procedures\USP_Serial_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Nominal_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_Delete.sql" />
-    <Build Include="dbo\Tables\ReportType.sql" />
+    <Build Include="dbo\Tables\eReportType.sql" />
     <Build Include="dbo\Stored Procedures\USP_Login_GetList.sql" />
     <Build Include="dbo\User Defined Types\UDT_ReportDocument.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_Create.sql" />
@@ -200,8 +200,8 @@
     <Build Include="dbo\Functions\fn_Ticket_CountHappy.sql" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Scripts\Post-Deployment\0002_ReportType_Insert.sql" />
-    <None Include="Scripts\Post-Deployment\0001_Role_Insert.sql" />
+    <None Include="Scripts\Post-Deployment\0002_eReportType_Insert.sql" />
+    <None Include="Scripts\Post-Deployment\0001_eRole_Insert.sql" />
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

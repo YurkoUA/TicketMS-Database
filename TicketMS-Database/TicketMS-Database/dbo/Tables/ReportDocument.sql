@@ -5,9 +5,9 @@
 	[TypeId]	INT					NOT NULL,
 	[FileUrl]	NVARCHAR(MAX)		NOT NULL
 
-	CONSTRAINT [PK_dbo.ReportDocument] PRIMARY KEY CLUSTERED ([Id] ASC),
-	CONSTRAINT [FK_dbo.ReportDocument_dbo.Report_ReportId] FOREIGN KEY ([ReportId]) REFERENCES [dbo].[Report] ([Id]),
-	CONSTRAINT [FK_dbo.ReportDocument_dbo.Report_TypeId] FOREIGN KEY ([TypeId]) REFERENCES [dbo].[ReportType] ([Id])
+	CONSTRAINT [PK_ReportDocument] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_ReportDocument_Report] FOREIGN KEY ([ReportId]) REFERENCES [dbo].[Report] ([Id]),
+	CONSTRAINT [FK_ReportDocument_ReportType] FOREIGN KEY ([TypeId]) REFERENCES [dbo].[eReportType] ([Id])
 )
 
 GO

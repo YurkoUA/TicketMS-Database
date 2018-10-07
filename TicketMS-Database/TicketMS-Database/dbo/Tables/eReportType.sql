@@ -1,0 +1,7 @@
+﻿CREATE TABLE [dbo].[eReportType]
+(
+	[Id]	INT				NOT NULL,
+	[Name]	NVARCHAR(64)	NOT NULL,
+
+	CONSTRAINT [PK_eReportType] PRIMARY KEY CLUSTERED ([Id] ASC)
+)

@@ -4,6 +4,6 @@
     [Tickets]      INT      NOT NULL,
     [HappyTickets] INT      NOT NULL,
     [Packages]     INT      NOT NULL,
-    CONSTRAINT [PK_dbo.Summary] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_Summary] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

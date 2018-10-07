@@ -1,7 +1,7 @@
-﻿CREATE TABLE [dbo].[Role] (
+﻿CREATE TABLE [dbo].[eRole] (
     [Id]          INT           NOT NULL,
     [Name]        NVARCHAR (32) NOT NULL,
     [Description] NVARCHAR (32) NOT NULL,
-    CONSTRAINT [PK_dbo.Role] PRIMARY KEY CLUSTERED ([Id] ASC)
+    CONSTRAINT [PK_eRole] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

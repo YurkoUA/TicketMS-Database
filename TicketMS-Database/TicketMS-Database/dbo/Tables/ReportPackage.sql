@@ -5,8 +5,8 @@
 	[TicketsCount]	INT NOT NULL
 
 	CONSTRAINT [PK_ReportPackage] PRIMARY KEY CLUSTERED ([ReportId] ASC, [PackageId] ASC),
-	CONSTRAINT [FK_dbo.ReportPackage_dbo.Report_ReportId] FOREIGN KEY ([ReportId]) REFERENCES [dbo].[Report] ([Id]),
-	CONSTRAINT [FK_dbo.ReportPackage_dbo.Package_PackageId] FOREIGN KEY ([PackageId]) REFERENCES [dbo].[Package] ([Id])
+	CONSTRAINT [FK_ReportPackage_Report] FOREIGN KEY ([ReportId]) REFERENCES [dbo].[Report] ([Id]),
+	CONSTRAINT [FK_ReportPackage_Package] FOREIGN KEY ([PackageId]) REFERENCES [dbo].[Package] ([Id])
 )
 
 GO

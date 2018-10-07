@@ -7,8 +7,8 @@
 	[RoleId]       INT             NOT NULL,
 	[TelegramId]   INT			   NULL
 
-	CONSTRAINT [PK_dbo.User] PRIMARY KEY CLUSTERED ([Id] ASC),
-	CONSTRAINT [FK_dbo.User_dbo.Role_RoleId] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[Role] ([Id])
+	CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([Id] ASC),
+	CONSTRAINT [FK_User_Role] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[eRole] ([Id])
 );
 
 
