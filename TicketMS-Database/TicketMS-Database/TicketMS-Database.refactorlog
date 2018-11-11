@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+  <Operation Name="Rename Refactor" Key="8825bb5a-39e2-4985-8053-d58ecb6dba2d" ChangeDateTime="11/11/2018 00:41:04">
+    <Property Name="ElementName" Value="[dbo].[eReportType]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[tReportType]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="8ee91269-0d01-4dfa-a748-388554a23353" ChangeDateTime="11/11/2018 00:41:39">
+    <Property Name="ElementName" Value="[dbo].[eStatistics]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[tStatistics]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="ca457f6c-0555-4af1-ae01-836ddae2d883" ChangeDateTime="11/11/2018 00:41:52">
+    <Property Name="ElementName" Value="[dbo].[eRole]" />
+    <Property Name="ElementType" Value="SqlTable" />
+    <Property Name="ParentElementName" Value="[dbo]" />
+    <Property Name="ParentElementType" Value="SqlSchema" />
+    <Property Name="NewName" Value="[tRole]" />
+  </Operation>
+</Operations>

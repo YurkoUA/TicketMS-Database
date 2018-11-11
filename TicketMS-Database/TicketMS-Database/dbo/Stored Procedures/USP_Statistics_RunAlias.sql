@@ -6,7 +6,7 @@ AS
 	DECLARE @spName NVARCHAR(64)
 
 	SELECT @spName = [SPName]
-	FROM [eStatistics]
+	FROM [tStatistics]
 	WHERE [Alias] = @alias
 
 	IF @spName IS NOT NULL

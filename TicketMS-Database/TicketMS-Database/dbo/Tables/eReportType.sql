@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[eReportType]
+﻿CREATE TABLE [dbo].[tReportType]
 (
 	[Id]	INT				NOT NULL,
 	[Name]	NVARCHAR(64)	NOT NULL,

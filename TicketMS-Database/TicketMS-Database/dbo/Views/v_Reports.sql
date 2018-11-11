@@ -13,7 +13,7 @@ SELECT	[r].[Id]		AS [ReportId],
 
 FROM [Report] AS [r]
 JOIN [ReportDocument] AS [d] ON [d].[ReportId] = [r].[Id]
-JOIN [eReportType] AS [t] ON [t].[Id] = [d].[TypeId]
+JOIN [tReportType] AS [t] ON [t].[Id] = [d].[TypeId]
 
 ORDER BY r.[Id]
 OFFSET 0 ROWS

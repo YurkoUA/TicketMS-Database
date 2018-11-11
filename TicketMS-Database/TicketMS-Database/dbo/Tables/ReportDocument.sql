@@ -7,7 +7,7 @@
 
 	CONSTRAINT [PK_ReportDocument] PRIMARY KEY CLUSTERED ([Id] ASC),
 	CONSTRAINT [FK_ReportDocument_Report] FOREIGN KEY ([ReportId]) REFERENCES [dbo].[Report] ([Id]),
-	CONSTRAINT [FK_ReportDocument_ReportType] FOREIGN KEY ([TypeId]) REFERENCES [dbo].[eReportType] ([Id])
+	CONSTRAINT [FK_ReportDocument_ReportType] FOREIGN KEY ([TypeId]) REFERENCES [dbo].[tReportType] ([Id])
 )
 
 GO

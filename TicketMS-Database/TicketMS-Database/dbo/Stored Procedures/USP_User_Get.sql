@@ -14,7 +14,7 @@ AS
 			[r].[Description]
 
 	FROM [User] AS [u]
-	JOIN [eRole] AS [r] ON [r].[Id] = [u].[RoleId]
+	JOIN [tRole] AS [r] ON [r].[Id] = [u].[RoleId]
 
 	WHERE [u].[Id] = @id
 RETURN 0

@@ -8,7 +8,7 @@
 	[TelegramId]   INT			   NULL
 
 	CONSTRAINT [PK_User] PRIMARY KEY CLUSTERED ([Id] ASC),
-	CONSTRAINT [FK_User_Role] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[eRole] ([Id])
+	CONSTRAINT [FK_User_Role] FOREIGN KEY ([RoleId]) REFERENCES [dbo].[tRole] ([Id])
 );
 
 

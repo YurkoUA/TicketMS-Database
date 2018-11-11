@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[eStatistics]
+﻿CREATE TABLE [dbo].[tStatistics]
 (
 	[Id]		INT NOT NULL,
 	[Alias]		NVARCHAR(64) NOT NULL,
@@ -11,4 +11,4 @@
 GO
 
 CREATE NONCLUSTERED INDEX [IX_eStatistics_Alias]
-	ON [dbo].[eStatistics] ([Alias] ASC)
+	ON [dbo].[tStatistics] ([Alias] ASC)
