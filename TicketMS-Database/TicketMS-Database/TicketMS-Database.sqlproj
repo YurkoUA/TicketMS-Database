@@ -74,7 +74,7 @@
     <Build Include="dbo\Tables\Package.sql" />
     <Build Include="dbo\Tables\Serial.sql" />
     <Build Include="dbo\Tables\Ticket.sql" />
-    <Build Include="dbo\Tables\eRole.sql" />
+    <Build Include="dbo\Tables\tRole.sql" />
     <Build Include="dbo\Tables\User.sql" />
     <Build Include="dbo\Tables\Login.sql" />
     <Build Include="dbo\Tables\Summary.sql" />
@@ -164,10 +164,9 @@
     <Build Include="dbo\Stored Procedures\USP_Serial_Create.sql" />
     <Build Include="dbo\Stored Procedures\USP_Serial_Update.sql" />
     <Build Include="dbo\Stored Procedures\USP_Serial_Delete.sql" />
-    <Build Include="dbo\Stored Procedures\USP_Serial_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Nominal_SetDefault.sql" />
     <Build Include="dbo\Stored Procedures\USP_Package_Delete.sql" />
-    <Build Include="dbo\Tables\eReportType.sql" />
+    <Build Include="dbo\Tables\tReportType.sql" />
     <Build Include="dbo\Stored Procedures\USP_Login_GetList.sql" />
     <Build Include="dbo\User Defined Types\UDT_ReportDocument.sql" />
     <Build Include="dbo\Stored Procedures\USP_Report_Create.sql" />
@@ -198,7 +197,7 @@
     <Build Include="dbo\Functions\fn_Package_Count.sql" />
     <Build Include="dbo\Functions\fn_Ticket_Count.sql" />
     <Build Include="dbo\Functions\fn_Ticket_CountHappy.sql" />
-    <Build Include="dbo\Tables\eStatistics.sql" />
+    <Build Include="dbo\Tables\tStatistics.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_RunId.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_RunAlias.sql" />
   </ItemGroup>

@@ -1,8 +1,7 @@
 ﻿CREATE TABLE [dbo].[Serial] (
 	[Id]			INT				IDENTITY (1, 1) NOT NULL,
 	[Name]			NVARCHAR (4)	NOT NULL,
-	[Note]			NVARCHAR (128)	NULL,
-	[IsDefault]		BIT				NOT NULL DEFAULT(0)
+	[Note]			NVARCHAR (128)	NULL
 	CONSTRAINT [PK_Serial] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
 

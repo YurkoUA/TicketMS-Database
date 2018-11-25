@@ -4,7 +4,6 @@ AS
 SELECT	[s].[Id],
 		[s].[Name],
 		[s].[Note],
-		[s].[IsDefault],
 		COALESCE([p].[PackagesCount], 0)	AS [PackagesCount],
 		COALESCE([t].[TicketsCount], 0)	AS [TicketsCount]
 
