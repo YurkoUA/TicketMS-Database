@@ -9,6 +9,9 @@
 RETURNS BIT
 AS
 BEGIN
+	IF NOT EXISTS (SELECT 1 FROM [Package] WHERE [Id] = @id AND [IsDeleted] = 0)
+		RETURN 0
+
 	DECLARE @ticketsCount INT = [dbo].[fn_Package_TicketsCount](@id)
 	DECLARE @conditionCount INT
 

@@ -9,4 +9,5 @@ AS
 
 	FROM [Package] AS [p]
 	WHERE [p].[CreatedDate] <= @endDate
+		AND ([p].[IsDeleted] = 0 OR ([p].[IsDeleted] = 1 AND [p].[DeletedDate] <= @endDate))
 RETURN 0

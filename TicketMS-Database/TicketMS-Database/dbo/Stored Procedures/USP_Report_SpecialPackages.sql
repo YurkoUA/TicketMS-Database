@@ -11,10 +11,12 @@ AS
 			IIF(@lastReportId IS NOT NULL, [dbo].[fn_ReportPackage_GetNewTicketsCount](@lastReportId, [p].[PackageId]), [dbo].[fn_Package_TicketsCount]([p].[PackageId]))	
 								AS [NewTicketsCount]
 
-	FROM [v_Packages] AS [p]
+	FROM [v_PackagesIncDeleted] AS [p]
 	JOIN [Ticket] AS [t] ON [t].[PackageId] = [p].[PackageId]
 
-	WHERE [p].[IsSpecial] = 1 AND [p].[CreatedDate] <= @endDate
+	WHERE [p].[IsSpecial] = 1 
+		AND [p].[CreatedDate] <= @endDate
+		AND ([p].[IsDeleted] = 0 OR ([p].[IsDeleted] = 1 AND [p].[DeletedDate] <= @endDate))
 
 	GROUP BY [p].[PackageId], [p].[PackageName], [p].[SerialName]
 	ORDER BY [p].[PackageId]

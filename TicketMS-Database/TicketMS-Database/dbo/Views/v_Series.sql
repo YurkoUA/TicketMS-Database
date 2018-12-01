@@ -14,6 +14,7 @@ LEFT JOIN
 			SELECT	[Package].[SerialId],
 					COUNT(*) AS [PackagesCount]
 			FROM [Package]
+			WHERE [Package].[IsDeleted] = 0
 			GROUP BY [Package].[SerialId]
 		) AS [p] ON [p].[SerialId] = [s].[Id]
 

@@ -9,6 +9,9 @@
 	[Note]        NVARCHAR (128) NULL,
 	[IsSpecial]   BIT            DEFAULT ((0)) NOT NULL,
 	[FirstDigit]  INT            NULL,
+	[IsDeleted]	  BIT			 DEFAULT ((0)) NOT NULL,
+	[DeletedDate] DATETIME		 NULL
+
 	CONSTRAINT [PK_Package] PRIMARY KEY CLUSTERED ([Id] ASC),
 	CONSTRAINT [FK_Package_Color] FOREIGN KEY ([ColorId]) REFERENCES [dbo].[Color] ([Id]),
 	CONSTRAINT [FK_Package_Serial] FOREIGN KEY ([SerialId]) REFERENCES [dbo].[Serial] ([Id]),

@@ -7,5 +7,8 @@ AS
 		THROW 50003, @msg, 1;
 	END
 
-	DELETE FROM [Package] WHERE [Id] = @id
+	UPDATE [Package] SET
+		[IsDeleted] = 1,
+		[DeletedDate] = GETUTCDATE()
+	WHERE [Id] = @id
 RETURN 0

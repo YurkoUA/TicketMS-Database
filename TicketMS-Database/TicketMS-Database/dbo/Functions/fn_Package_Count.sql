@@ -10,7 +10,8 @@ BEGIN
 
 	SELECT @count = COUNT(*)
 	FROM [Package]
-	WHERE ((@onlyOpened = 1		AND [IsOpened] = 1)		OR @onlyOpened = 0)
+	WHERE [IsDeleted] = 0
+		AND ((@onlyOpened = 1		AND [IsOpened] = 1)		OR @onlyOpened = 0)
 		AND ((@onlySpecial = 1	AND [IsSpecial] = 1)	OR @onlySpecial = 0)
 
 	RETURN @count

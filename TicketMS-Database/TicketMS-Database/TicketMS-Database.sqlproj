@@ -200,6 +200,7 @@
     <Build Include="dbo\Tables\tStatistics.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_RunId.sql" />
     <Build Include="dbo\Stored Procedures\USP_Statistics_RunAlias.sql" />
+    <Build Include="dbo\Views\v_PackagesIncDeleted.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\Post-Deployment\0002_tReportType_Insert.sql" />

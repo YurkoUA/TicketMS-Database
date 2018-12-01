@@ -8,7 +8,7 @@ AS
 			p.[IsSpecial]
 
 	FROM [ReportPackage] AS [rp]
-	JOIN [v_Packages] AS [p] ON p.[PackageId] = rp.[PackageId]
+	JOIN [v_PackagesIncDeleted] AS [p] ON p.[PackageId] = rp.[PackageId]
 	WHERE rp.[ReportId] = @reportId
 	ORDER BY p.[PackageId]
 RETURN 0

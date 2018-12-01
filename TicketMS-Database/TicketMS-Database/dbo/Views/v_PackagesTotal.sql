@@ -6,3 +6,4 @@ SELECT	COUNT(*)											AS [TotalCount],
 		SUM(CASE p.[IsSpecial] WHEN 1 THEN 1 ELSE 0 END)	AS [SpecialCount]
 
 FROM [Package] AS [p]
+WHERE [p].[IsDeleted] = 0
