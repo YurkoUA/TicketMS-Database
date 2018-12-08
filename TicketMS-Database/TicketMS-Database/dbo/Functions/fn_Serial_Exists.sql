@@ -6,7 +6,7 @@
 RETURNS BIT
 AS
 BEGIN
-	IF EXISTS (SELECT 1 FROM [Serial] WHERE [Name] = @name AND (@id IS NULL OR [Id] = @id))
+	IF EXISTS (SELECT 1 FROM [Serial] WHERE [Name] = @name AND (@id IS NULL OR [Id] != @id))
 		RETURN 1
 
 	RETURN 0

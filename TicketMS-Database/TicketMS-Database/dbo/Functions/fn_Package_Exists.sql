@@ -6,7 +6,7 @@
 RETURNS BIT
 AS
 BEGIN
-	IF EXISTS (SELECT 1 FROM [Package] WHERE [Name] = @name AND (@id IS NULL OR [Id] = @id) AND [IsSpecial] = 1 AND [IsDeleted] = 0)
+	IF EXISTS (SELECT 1 FROM [Package] WHERE [Name] = @name AND (@id IS NULL OR [Id] != @id) AND [IsSpecial] = 1 AND [IsDeleted] = 0)
 		RETURN 1
 
 	RETURN 0
