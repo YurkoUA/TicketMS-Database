@@ -16,7 +16,8 @@ AS
 	ORDER BY ([p].[IsOpened] & [p].[IsSpecial])				DESC, 
 			([p].[IsOpened] & ([p].[IsSpecial] ^ 1))		DESC, 
 			(([p].[IsOpened] ^ 1) & ([p].[IsSpecial] ^ 1))	DESC, 
-			(([p].[IsOpened] ^ 1) & [p].[IsSpecial])		ASC
+			(([p].[IsOpened] ^ 1) & [p].[IsSpecial])		ASC,
+			[p].[PackageId] DESC
 
 	OFFSET @offset ROWS
 	FETCH NEXT @take ROWS ONLY
