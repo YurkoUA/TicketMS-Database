@@ -4,7 +4,7 @@
 	@colorId		INT,
 	@serialId		INT,
 	@nominalId		INT,
-	@firstDigit		INT
+	@firstDigit		INT = NULL
 )
 RETURNS BIT
 AS
@@ -21,10 +21,10 @@ BEGIN
 	SELECT @conditionCount = COUNT(*)
 	FROM [Ticket]
 	WHERE [PackageId] = @id
-		AND ([ColorId] = @colorId		OR @colorId IS NULL)
-		AND ([SerialId] = @serialId		OR @serialId IS NULL)
-		AND ([NominalId] = @nominalId	OR @nominalId IS NULL)
-		AND ([dbo].[fn_Number_GetFirstDigit]([Number]) = @firstDigit OR @firstDigit IS NULL)
+		AND (@colorId IS NULL OR [ColorId] = @colorId)
+		AND (@serialId IS NULL OR [SerialId] = @serialId)
+		AND ([NominalId] = @nominalId)
+		AND (@firstDigit IS NULL OR [dbo].[fn_Number_GetFirstDigit]([Number]) = @firstDigit)
 
 	IF (@ticketsCount = @conditionCount)
 		RETURN 1

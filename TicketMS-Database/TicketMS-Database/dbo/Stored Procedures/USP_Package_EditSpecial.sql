@@ -6,13 +6,19 @@
 	@nominalId	INT,
 	@note		NVARCHAR(128)
 AS
+	DECLARE @msg NVARCHAR(MAX)
+
 	IF ([dbo].[fn_Package_Exists](@name, @id) = 1)
 	BEGIN;
-		DECLARE @msg NVARCHAR(MAX) = CONCAT(N'Спеціальна пачка з іменем "', @name, N'" вже існує.');
+		SET @msg = CONCAT(N'Спеціальна пачка з іменем "', @name, N'" вже існує.');
 		THROW 50002, @msg, 1;
 	END
-
-	-- TODO: CanBeEdited.
+	
+	IF ([dbo].[fn_Package_CanBeEdited](@id, @colorId, @serialId, @nominalId, NULL) = 0)
+	BEGIN;
+		SET @msg  = N'Неможливо відредагувати пачку.';
+		THROW 50002, @msg, 1;
+	END
 
 	UPDATE [Package] SET
 		[Name] = @name,

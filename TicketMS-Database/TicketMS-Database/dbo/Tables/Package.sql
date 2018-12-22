@@ -8,7 +8,7 @@
 	[CreatedDate] DATETIME       DEFAULT ((GETUTCDATE())) NOT NULL,
 	[Note]        NVARCHAR (128) NULL,
 	[IsSpecial]   BIT            DEFAULT ((0)) NOT NULL,
-	[FirstDigit]  INT            NULL,
+	[FirstDigit]  INT			 CHECK([FirstDigit] >= 0 AND [FirstDigit] <= 9)	NULL,
 	[IsDeleted]	  BIT			 DEFAULT ((0)) NOT NULL,
 	[DeletedDate] DATETIME		 NULL
 

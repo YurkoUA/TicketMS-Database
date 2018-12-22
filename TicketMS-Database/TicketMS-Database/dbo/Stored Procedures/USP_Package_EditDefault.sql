@@ -6,7 +6,11 @@
 	@firstDigit	INT,
 	@note		NVARCHAR(128)
 AS
-	-- TODO: Validate.
+	IF ([dbo].[fn_Package_CanBeEdited](@id, @colorId, @serialId, @nominalId, @firstDigit) = 0)
+	BEGIN;
+		DECLARE @msg NVARCHAR(MAX) = N'Неможливо відредагувати пачку.';
+		THROW 50002, @msg, 1;
+	END
 
 	UPDATE [Package] SET
 		[ColorId] = @colorId,
