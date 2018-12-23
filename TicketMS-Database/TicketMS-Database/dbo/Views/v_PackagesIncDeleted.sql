@@ -32,7 +32,7 @@ LEFT JOIN [Color]	AS [c] ON [c].[Id] = [p].[ColorId]
 LEFT JOIN [Ticket]	AS [t] ON [t].[PackageId] = [p].[Id]
 JOIN [Nominal] AS [n] ON [n].[Id] = [p].[NominalId]
 
-CROSS APPLY
+OUTER APPLY
 	(
 		SELECT TOP 1 [Ticket].[Number]
 		FROM [Ticket]
