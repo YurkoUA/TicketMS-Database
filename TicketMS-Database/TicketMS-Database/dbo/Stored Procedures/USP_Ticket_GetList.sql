@@ -9,5 +9,5 @@ AS
 	OFFSET @offset ROWS
 	FETCH NEXT @take ROWS ONLY
 
-	SET @total = [dbo].[fn_Ticket_CountHappy]()
+	SET @total = [dbo].[fn_Ticket_Count]()
 RETURN 0
